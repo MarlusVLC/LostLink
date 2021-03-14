@@ -20,6 +20,8 @@ public class MainMovement : MonoBehaviour
     [SerializeField]private string controls; //Player1 ou Player2
     [Space]
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private Vector2 groundCheckBoxPos;
+    [SerializeField] private Vector2 groundCheckBoxSize;
     [SerializeField] private LayerMask trapLayer;
     [Space]
     // [SerializeField] private float horizontalMoveRate;
@@ -117,7 +119,9 @@ public class MainMovement : MonoBehaviour
         
         
         
-        _canJump = _boxCollider.IsTouchingLayers(groundLayer) || _coyoteTime > 0;
+        // _canJump = _boxCollider.IsTouchingLayers(groundLayer) || _coyoteTime > 0;
+        _canJump =  Physics2D.OverlapBox((Vector2)transform.position + groundCheckBoxPos, groundCheckBoxSize, 0,
+            1 << LayerMask.NameToLayer("Floor"));
         // _animator.SetBool("Can Jump", _canJump);
 
 
@@ -144,6 +148,21 @@ public class MainMovement : MonoBehaviour
         }
         
         // FreeFall();
+    }
+    
+    
+    
+    
+    
+    private void OnDrawGizmos()
+    {
+        if (Application.isEditor)
+        {
+            _canJump =  Physics2D.OverlapBox((Vector2)transform.position + groundCheckBoxPos, groundCheckBoxSize, 0,
+                1 << LayerMask.NameToLayer("Floor"));
+        }
+        Gizmos.color = _canJump ? Color.red : Color.blue;
+        Gizmos.DrawWireCube((Vector2)transform.position + groundCheckBoxPos, groundCheckBoxSize);
     }
 
 
@@ -191,5 +210,6 @@ public class MainMovement : MonoBehaviour
     {
         get { return _canJump; }
     }
+    
     
 }

@@ -56,8 +56,10 @@ public class TogglerLight : MonoBehaviour, IInteractable
     {
         if (_canPress)
         {
-            _affectedAnim.SetTrigger("Open");
+            _affectedAnim.SetTrigger("On");
             _anim.SetTrigger("Defunct");
         }
     }
+    
+    
 }
