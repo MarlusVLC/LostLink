@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// THIS CLASS IS DEPRECATED!
+/// ORIGIN CLASS FOR DistanceGradient AND CameraExpansion
+/// </summary>
 public class PlayersInteractions : MonoBehaviour
 {
     [Header("Initial camera expansion")]
@@ -29,6 +34,12 @@ public class PlayersInteractions : MonoBehaviour
     {
         _blueRenderer = blueOne.GetComponent<SpriteRenderer>();
         _redRenderer = redOne.GetComponent<SpriteRenderer>();
+
+        if (!Application.isEditor)
+        {
+            blueOne.transform.position = Vector3.zero;
+            redOne.transform.position = Vector3.zero;
+        }
 
     }
 

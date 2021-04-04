@@ -19,11 +19,14 @@ namespace SpecificEvents
     
         [SerializeField] private GameObject[] playerCams = new GameObject[2];
     
+        [Tooltip("A distância que ambos os jogadores devem estar da origem para que a" +
+                 "mudança de camêras seja executada")]
         [SerializeField] private float changingPoint;
     
         private Animator[] _anims = new Animator[2];
     
         private short _animsFinished;
+        private short _framesFinishedAfterMainCamDeactivation;
         private AnimatorStateInfo _currAnimation;
     
         private void Awake()
@@ -56,17 +59,32 @@ namespace SpecificEvents
                 if (_currAnimation.normalizedTime > 0.9 && _currAnimation.IsName("Close"))
                 {
                     _animsFinished++;
-                    Debug.Log("anim finalizada");
                 }
             }
     
             if (_animsFinished >= 2)
             {
+                initialCam.GetComponent<Camera>().farClipPlane = 0.32f;
+                // initialCam.SetActive(false);
+            }
+        }
+
+        private void LateUpdate()
+        {
+            if (_framesFinishedAfterMainCamDeactivation > 3)
+            {
                 playerCams[0].SetActive(true);
                 playerCams[1].SetActive(true);
-                initialCam.SetActive(false);
+                
+                GameManager.getInstance.SetRespawnState(_redOne.gameObject,_redOne.position, Vector3.zero, 0);
+                GameManager.getInstance.SetRespawnState(_blueOne.gameObject,_blueOne.position, Vector3.zero, 0);
+
+                
                 Destroy(this);
             }
+    
+            if (_animsFinished >= 2)
+                _framesFinishedAfterMainCamDeactivation++;
         }
     }
 }

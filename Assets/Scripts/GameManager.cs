@@ -34,9 +34,9 @@ public class GameManager : MonoBehaviour
         
     }
 
-    private void Update()
+    private void Start()
     {
-
+        Physics.IgnoreLayerCollision(9, 17);
     }
     
 

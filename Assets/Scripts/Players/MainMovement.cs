@@ -27,7 +27,7 @@ public class MainMovement : MonoBehaviour
     // [SerializeField] private float horizontalMoveRate;
     [SerializeField] private float jumpMoveRate;
     [SerializeField] private float deathHeight = -10; //TALVEZ TENHA QUE MUDAR DEPOIS
-    [SerializeField] private float DEFAULT_coyoteTime;
+    // [SerializeField] private float DEFAULT_coyoteTime;
     [SerializeField] private float DEFAULT_jumpBuffer;
     [SerializeField] private float hDampingBasic;
     [SerializeField] private float hDampingStop;
@@ -40,8 +40,8 @@ public class MainMovement : MonoBehaviour
 
     
     private Rigidbody2D _rb;
-    private BoxCollider2D _boxCollider;
-    private CapsuleCollider2D _capsuleCollider;
+    // private BoxCollider2D _boxCollider;
+    // private CapsuleCollider2D _capsuleCollider;
     private MoveState _moveState;
     // private Animator _animator;
     private float _coyoteTime;
@@ -56,9 +56,9 @@ public class MainMovement : MonoBehaviour
     void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
-        _boxCollider = GetComponent<BoxCollider2D>();
+        // _boxCollider = GetComponent<BoxCollider2D>();
         _areMovementsDamped = true;
-        _capsuleCollider = GetComponent<CapsuleCollider2D>();
+        // _capsuleCollider = GetComponent<CapsuleCollider2D>();
         // _animator = GetComponent<Animator>();
     }
 
@@ -82,7 +82,7 @@ public class MainMovement : MonoBehaviour
     void FixedUpdate()
     {
 
-        if (transform.position.y <= deathHeight || _capsuleCollider.IsTouchingLayers(trapLayer)) //TALVEZ TENHA QUE MUDAR PRA CONSIDERAR ALGO MAIS GENÉRICO
+        if (transform.position.y <= deathHeight) //TALVEZ TENHA QUE MUDAR PRA CONSIDERAR ALGO MAIS GENÉRICO
         {
             Die();
         }
@@ -121,7 +121,7 @@ public class MainMovement : MonoBehaviour
         
         // _canJump = _boxCollider.IsTouchingLayers(groundLayer) || _coyoteTime > 0;
         _canJump =  Physics2D.OverlapBox((Vector2)transform.position + groundCheckBoxPos, groundCheckBoxSize, 0,
-            1 << LayerMask.NameToLayer("Floor"));
+            groundLayer) || _coyoteTime > 0;
         // _animator.SetBool("Can Jump", _canJump);
 
 
@@ -159,7 +159,7 @@ public class MainMovement : MonoBehaviour
         if (Application.isEditor)
         {
             _canJump =  Physics2D.OverlapBox((Vector2)transform.position + groundCheckBoxPos, groundCheckBoxSize, 0,
-                1 << LayerMask.NameToLayer("Floor"));
+                groundLayer);
         }
         Gizmos.color = _canJump ? Color.red : Color.blue;
         Gizmos.DrawWireCube((Vector2)transform.position + groundCheckBoxPos, groundCheckBoxSize);

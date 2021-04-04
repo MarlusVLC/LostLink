@@ -7,19 +7,19 @@ using UnityEngine;
 //PEGO NO CANAL InfallibleCode 
 namespace Aux_Classes
 {
-    public class CompositeInteraction : MonoBehaviour, IInteractable
+    public class CompositeInteraction : MonoBehaviour //Interactable
     {
-        [SerializeField] private List<GameObject> interacbleGameObjects;
+//         [SerializeField] private List<GameObject> interacbleGameObjects;
 
-        public void Interact()
-        {
-            foreach (var interactableGameObject in interacbleGameObjects )
-            {
-                var interactable = interactableGameObject.GetComponent<IInteractable>();
-                if (interactable == null) continue;
-                interactable.Interact();;
-            }
-        }
+        // public override void Interact()
+        // {
+        //     foreach (var interactableGameObject in interacbleGameObjects )
+        //     {
+        //         var interactable = interactableGameObject.GetComponent<Interactable>();
+        //         if (interactable == null) continue;
+        //         interactable.Interact();;
+        //     }
+        // }
     }
 
 }

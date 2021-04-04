@@ -2,10 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using Aux_Classes;
+using Interactions.Interactables;
 using UnityEngine;
 
-public class TogglerLight : MonoBehaviour, IInteractable
+public class TogglerLight_Copy : Interactable
 {
+    // [SerializeField] private float[] Responders;
     [SerializeField] private Transform enablerPlayer;
     [SerializeField] private Transform affectedObject;
 
@@ -48,18 +50,15 @@ public class TogglerLight : MonoBehaviour, IInteractable
             _canPress = false;
         }
     }
-    
-    
-    
-    
-    public void Interact()
+
+
+    public override void Trigger()
     {
         if (_canPress)
         {
             _affectedAnim.SetTrigger("On");
             _anim.SetTrigger("Defunct");
-        }
+        }    
     }
-    
-    
+
 }

@@ -16,9 +16,7 @@ public class ReturnMovingPlatform : MonoBehaviour
     [Header("ARRUMAR ESSA PORRA DEPOIS")] 
     [SerializeField]
     private GameObject associatedLight;
-
-    private float x_Player, x_This, y_This;
-
+    
 
     private Animator _anim;
     
@@ -31,16 +29,13 @@ public class ReturnMovingPlatform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        x_Player = Mathf.Abs(player.position.x);
-        x_This = Mathf.Abs(transform.position.x);
-        y_This = Mathf.Abs(transform.position.y);
         if (Mathf.Abs(player.position.x) < Math.Abs(returnPoint_back)
             && transform.position.y > 9)
         {
             _anim.SetTrigger("Off");
         }
 
-        if (_anim.GetCurrentAnimatorStateInfo(0).IsName("idle 0"))
+        if (_anim.GetCurrentAnimatorStateInfo(0).IsName("idle"))
         {
             associatedLight.SetActive(true);
         }

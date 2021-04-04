@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Aux_Classes;
+using Interactions.Interactables;
 using UnityEngine;
 
 public class PlayerCommands : MonoBehaviour
@@ -11,11 +12,11 @@ public class PlayerCommands : MonoBehaviour
     
     private Collider2D _detectedCollider;
 
-    private IInteractable _responder;
+    private Interactable _interactable;
     // Start is called before the first frame update
     void Awake()
     {
-        _responder = null;
+        _interactable = null;
     }
 
     // Update is called once per frame
@@ -27,28 +28,28 @@ public class PlayerCommands : MonoBehaviour
 
         if (_detectedCollider)
         {
-            if (_responder == null)
+            if (_interactable == null)
             {
-                _responder = _detectedCollider.transform.GetComponent<IInteractable>();
+                _interactable = _detectedCollider.transform.GetComponent<Interactable>();
             }
         }
         else
         {
-            _responder = null;
+            _interactable = null;
         }
 
-        if (_responder != null)
+        if (_interactable != null)
         {
-            ActUpon(_responder);
+            ActUpon(_interactable);
         }   
         
     }
 
-    private void ActUpon(IInteractable interactable)
+    private void ActUpon(Interactable interactable)
     {
         if (Input.GetButtonDown("Interact" + controls))
         {
-            interactable.Interact();
+            interactable.Trigger();
         }
     }
 
