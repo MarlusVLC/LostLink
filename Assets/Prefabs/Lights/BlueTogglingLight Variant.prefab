@@ -17,20 +17,25 @@ PrefabInstance:
       propertyPath: affectedObject
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1922995107011757480, guid: b8b7115335ae03d42873283c03b51d57,
+        type: 3}
+      propertyPath: enablerLayer.m_Bits
+      value: 524288
+      objectReference: {fileID: 0}
     - target: {fileID: 1922995108858398717, guid: b8b7115335ae03d42873283c03b51d57,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.990566
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1922995108858398717, guid: b8b7115335ae03d42873283c03b51d57,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.06214607
+      value: 0.14976798
       objectReference: {fileID: 0}
     - target: {fileID: 1922995108858398717, guid: b8b7115335ae03d42873283c03b51d57,
         type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 0.023584902
       objectReference: {fileID: 0}
     - target: {fileID: 1922995108858398718, guid: b8b7115335ae03d42873283c03b51d57,
         type: 3}

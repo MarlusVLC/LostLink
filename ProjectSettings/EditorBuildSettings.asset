@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Proto1 - SplitScreenTest.unity
-    guid: 508c2edec4432fc47906641305c0d56c
+    path: Assets/Scenes/Proto2 - SpriteTest0.unity
+    guid: fbe9d98b7ee97f840a7b15840dfc7dc8
   m_configObjects: {}

@@ -15,7 +15,7 @@ PrefabInstance:
     - target: {fileID: 1438141533971182401, guid: a370ef95caca02846b0dd91f3e084921,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.2784314
+      value: 0.03424205
       objectReference: {fileID: 0}
     - target: {fileID: 1438141533971182401, guid: a370ef95caca02846b0dd91f3e084921,
         type: 3}
@@ -80,12 +80,17 @@ PrefabInstance:
     - target: {fileID: 1438141533971182403, guid: a370ef95caca02846b0dd91f3e084921,
         type: 3}
       propertyPath: m_Name
-      value: RedInstantLight (1)
+      value: RedInstantLight (1) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5427556686789845366, guid: a370ef95caca02846b0dd91f3e084921,
         type: 3}
       propertyPath: enablerPlayer
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427556686789845366, guid: a370ef95caca02846b0dd91f3e084921,
+        type: 3}
+      propertyPath: enablerLayer.m_Bits
+      value: 262144
       objectReference: {fileID: 0}
     - target: {fileID: 5427556686789845366, guid: a370ef95caca02846b0dd91f3e084921,
         type: 3}

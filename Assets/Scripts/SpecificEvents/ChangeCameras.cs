@@ -16,7 +16,7 @@ namespace SpecificEvents
         [SerializeField] private Transform _redOne;
     
         [SerializeField] private GameObject initialCam;
-    
+
         [SerializeField] private GameObject[] playerCams = new GameObject[2];
     
         [Tooltip("A distância que ambos os jogadores devem estar da origem para que a" +
@@ -26,8 +26,10 @@ namespace SpecificEvents
         private Animator[] _anims = new Animator[2];
     
         private short _animsFinished;
-        private short _framesFinishedAfterMainCamDeactivation;
+        private short _framesFinishedAfterInitialCamDeactivation;
         private AnimatorStateInfo _currAnimation;
+
+        private Camera _initicalCamComponent;
     
         private void Awake()
         {
@@ -40,6 +42,8 @@ namespace SpecificEvents
             {
                 _anims[i] = gates[i].GetComponent<Animator>();
             }
+
+            _initicalCamComponent = initialCam.GetComponent<Camera>();
         }
     
         // Update is called once per frame
@@ -64,14 +68,14 @@ namespace SpecificEvents
     
             if (_animsFinished >= 2)
             {
-                initialCam.GetComponent<Camera>().farClipPlane = 0.32f;
-                // initialCam.SetActive(false);
+                _initicalCamComponent.farClipPlane = 0.32f;
+                
             }
         }
 
         private void LateUpdate()
         {
-            if (_framesFinishedAfterMainCamDeactivation > 3)
+            if (_framesFinishedAfterInitialCamDeactivation > 3)
             {
                 playerCams[0].SetActive(true);
                 playerCams[1].SetActive(true);
@@ -79,12 +83,13 @@ namespace SpecificEvents
                 GameManager.getInstance.SetRespawnState(_redOne.gameObject,_redOne.position, Vector3.zero, 0);
                 GameManager.getInstance.SetRespawnState(_blueOne.gameObject,_blueOne.position, Vector3.zero, 0);
 
+                initialCam.SetActive(false);
                 
                 Destroy(this);
             }
     
             if (_animsFinished >= 2)
-                _framesFinishedAfterMainCamDeactivation++;
+                _framesFinishedAfterInitialCamDeactivation++;
         }
     }
 }

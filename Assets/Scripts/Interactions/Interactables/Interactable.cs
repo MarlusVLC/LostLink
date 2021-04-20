@@ -18,7 +18,7 @@ namespace Interactions.Interactables
 
 
         
-        public void Interact()
+        protected void Interact()
         {
             foreach (Responder responder in _responders)
             {
@@ -26,7 +26,7 @@ namespace Interactions.Interactables
             }
         }
         
-        public void Interact(Vector2 messageCoordinates)
+        protected void Interact(Vector2 messageCoordinates)
         {
             foreach (Responder responder in _responders)
             {

@@ -13,7 +13,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _responders: []
-  enablerPlayer: {fileID: 0}
+  enablerPlayer:
+  - {fileID: 0}
+  enablerLayer:
+    serializedVersion: 2
+    m_Bits: 524288
+  inputPosition: 0
+  relativeGoal: {x: 0, y: 0}
 --- !u!1001 &674017979314730172
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44,17 +50,17 @@ PrefabInstance:
     - target: {fileID: 1922995108858398717, guid: b8b7115335ae03d42873283c03b51d57,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1922995108858398717, guid: b8b7115335ae03d42873283c03b51d57,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.06367925
+      value: 0.14976798
       objectReference: {fileID: 0}
     - target: {fileID: 1922995108858398717, guid: b8b7115335ae03d42873283c03b51d57,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.09151687
+      value: 0.023584902
       objectReference: {fileID: 0}
     - target: {fileID: 1922995108858398718, guid: b8b7115335ae03d42873283c03b51d57,
         type: 3}
@@ -114,7 +120,7 @@ PrefabInstance:
     - target: {fileID: 1922995108858398719, guid: b8b7115335ae03d42873283c03b51d57,
         type: 3}
       propertyPath: m_Name
-      value: BlueInstantLight (2)
+      value: BlueInstantLight Variant
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1922995107011757480, guid: b8b7115335ae03d42873283c03b51d57, type: 3}

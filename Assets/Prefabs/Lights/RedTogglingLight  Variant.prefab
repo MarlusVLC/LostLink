@@ -27,10 +27,20 @@ PrefabInstance:
       propertyPath: affectedObject
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1922995107011757480, guid: b8b7115335ae03d42873283c03b51d57,
+        type: 3}
+      propertyPath: enablerLayer.m_Bits
+      value: 262144
+      objectReference: {fileID: 0}
     - target: {fileID: 1922995108858398717, guid: b8b7115335ae03d42873283c03b51d57,
         type: 3}
       propertyPath: m_Color.b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922995108858398717, guid: b8b7115335ae03d42873283c03b51d57,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.016976096
       objectReference: {fileID: 0}
     - target: {fileID: 1922995108858398717, guid: b8b7115335ae03d42873283c03b51d57,
         type: 3}
@@ -95,7 +105,7 @@ PrefabInstance:
     - target: {fileID: 1922995108858398719, guid: b8b7115335ae03d42873283c03b51d57,
         type: 3}
       propertyPath: m_Name
-      value: 'RedTogglingLight '
+      value: RedTogglingLight  Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1922995108858398719, guid: b8b7115335ae03d42873283c03b51d57,
         type: 3}

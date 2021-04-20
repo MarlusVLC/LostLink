@@ -5,6 +5,9 @@ namespace Aux_Classes
 {
     public class HorizontalPlatform : Responder
     {
+        private AnimationClip a;
+
+        
         private Animator _anim;
         private int _animOn, _animOff;
 
