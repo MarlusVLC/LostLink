@@ -36,8 +36,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Physics.IgnoreLayerCollision(1 << 9, 1 << 17);
-        Physics.IgnoreLayerCollision(1 << 18, 1 << 19);
+        // Physics.IgnoreLayerCollision(1 << 9, 1 << 17);
+        // Physics.IgnoreLayerCollision(1 << 18, 1 << 19);
 
     }
     

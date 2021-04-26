@@ -17,7 +17,7 @@ public class PlayerStandAtopPlatform : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (1 << other.gameObject.layer != attachableLayer)
+        if ((1 << other.gameObject.layer | attachableLayer) != attachableLayer)
         {
             return;
         }
@@ -28,15 +28,13 @@ public class PlayerStandAtopPlatform : MonoBehaviour
             _originalParent = other.transform.parent;
             other.transform.SetParent(transform);
         }
-        
-
     }
 
 
 
     private void OnCollisionExit2D(Collision2D other)
     {
-        if (1 << other.gameObject.layer != attachableLayer)
+        if ((1 << other.gameObject.layer | attachableLayer) != attachableLayer)
         {
             return;
         }

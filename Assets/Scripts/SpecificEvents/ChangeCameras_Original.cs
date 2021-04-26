@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace SpecificEvents
 {
-    public class ChangeCameras : MonoBehaviour
+    public class ChangeCameras_Original : MonoBehaviour
     {
     
         [SerializeField] private Transform[] gates = new Transform[2];
@@ -69,6 +69,7 @@ namespace SpecificEvents
             if (_animsFinished >= 2)
             {
                 _initicalCamComponent.farClipPlane = 0.32f;
+                
             }
         }
 
@@ -76,33 +77,19 @@ namespace SpecificEvents
         {
             if (_framesFinishedAfterInitialCamDeactivation > 3)
             {
-                SetSplitScreen();
+                playerCams[0].SetActive(true);
+                playerCams[1].SetActive(true);
                 
+                GameManager.getInstance.SetRespawnState(_redOne.gameObject,_redOne.position, Vector3.zero, 0);
+                GameManager.getInstance.SetRespawnState(_blueOne.gameObject,_blueOne.position, Vector3.zero, 0);
+
+                initialCam.SetActive(false);
+                
+                Destroy(this);
             }
     
             if (_animsFinished >= 2)
                 _framesFinishedAfterInitialCamDeactivation++;
-
-            if (_redOne.position.y > 35f && _blueOne.position.y > 35f)
-            {
-                SetSplitScreen();
-            }
-
-        }
-
-
-        private void SetSplitScreen()
-        {
-            playerCams[0].SetActive(true);
-            playerCams[1].SetActive(true);
-                
-            GameManager.getInstance.SetRespawnState(_redOne.gameObject,_redOne.position, Vector3.zero, 0);
-            GameManager.getInstance.SetRespawnState(_blueOne.gameObject,_blueOne.position, Vector3.zero, 0);
-
-            initialCam.SetActive(false);
-            
-            Destroy(this);
-
         }
     }
 }

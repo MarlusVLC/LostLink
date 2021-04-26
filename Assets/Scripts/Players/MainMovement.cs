@@ -75,8 +75,8 @@ public class MainMovement : MonoBehaviour
             _moveState = MoveState.Walking;
         }
         
-        DEBUGMarkCheckpoint();
         
+        DEBUGMarkCheckpoint();
     }
 
     void FixedUpdate()
