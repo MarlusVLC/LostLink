@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using Aux_Classes;
 using UnityEngine;
 
 public class ReturnMovingPlatform : MonoBehaviour
@@ -18,11 +19,13 @@ public class ReturnMovingPlatform : MonoBehaviour
     private GameObject associatedLight;
     
 
-    private Animator _anim;
+    // private Animator _anim;
+    private HorizontalPlatform _responder;
     
     void Awake()
     {
-        _anim = GetComponent<Animator>();
+        // _anim = GetComponent<Animator>();
+        _responder = GetComponent<HorizontalPlatform>();
         returnPoint_back *= Mathf.Sign(transform.position.x);
     }
 
@@ -32,10 +35,17 @@ public class ReturnMovingPlatform : MonoBehaviour
         if (Mathf.Abs(player.position.x) < Math.Abs(returnPoint_back)
             && transform.position.y > 9)
         {
-            _anim.SetTrigger("Off");
+            // _anim.SetTrigger("Off");
+            // _responder.CanReturn = true;
+            // _responder.LERPReturn();
         }
 
-        if (_anim.GetCurrentAnimatorStateInfo(0).IsName("idle"))
+        // if (_anim.GetCurrentAnimatorStateInfo(0).IsName("idle"))
+        // {
+        //     associatedLight.SetActive(true);
+        // }
+
+        if (!_responder.IsInterpolating)
         {
             associatedLight.SetActive(true);
         }

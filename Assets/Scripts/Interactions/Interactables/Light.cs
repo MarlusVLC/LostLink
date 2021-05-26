@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Aux_Classes;
 using UnityEngine;
 
 namespace Interactions.Interactables
@@ -14,112 +15,102 @@ namespace Interactions.Interactables
         private BoxCollider2D _presenceDetector;
         protected Animator _anim;
     
+        [Space(11)]
         protected bool _canPress;
+        protected int _keys;
+        protected int _keySet;
         
-        protected int _insiderLayer;
-        protected List<Transform> _insidersTransform;
-        
-    
-        private void Awake()
-        {
-            _canPress = false;
-            _insiderLayer = 0;
-        } 
     
         void Start()
         {
+            _canPress = false;
             _anim = transform.GetComponentInParent<Animator>();
+            _keySet = useMask ? enablerLayer.value.CountSetBits() : enablerPlayers.Length ;
         }
         
+        
+        
+        
+        
+        
 
+        private void Update()
+        {
+            _anim.SetBool("isOn", _keys >= _keySet);
+            _canPress = _keys >= _keySet;
+        }
+
+        
+        
+        
+        
+        
+        
+        
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            // ( enablerPlayer.Contains(other.transform) || 
 
             if (useMask)
             {
                 int otherMask = 1 << other.gameObject.layer;
-            
-                print(other.gameObject.name + " has entered");
-            
-                if (otherMask == enablerLayer || (otherMask | _insiderLayer) == enablerLayer)
+
+                if ((otherMask | enablerLayer) == enablerLayer)
                 {
-                    _anim.SetTrigger("ToggleOn");
-                    _canPress = true;
-                    // _insiderLayer |= otherMask;
-                    return;
-                }
-            
-                if (enablerLayer == (enablerLayer | (otherMask)))
-                {
-                    _insiderLayer |= otherMask;
+                    _keys++;
                 }
             }
             
             else
-            
             {
-                Transform otherTrans = other.transform;
-                
-                if (enablerPlayers.Contains(otherTrans))
-                {
-                    _insidersTransform.Add(otherTrans);
-                }
-                
-                if (enablerPlayers.Length == 1 && enablerPlayers[0] == otherTrans
-                    || _insidersTransform.Count == enablerPlayers.Length)
-                {
-                    _anim.SetTrigger("ToggleOn");
-                    _canPress = true;
-                }
+                if (enablerPlayers.Contains(other.transform))
+                    _keys++;
             }
-
-            
-            
-            
-            
-            
         }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         private void OnTriggerExit2D(Collider2D other)
         {
             if (useMask)
             {
                 int otherMask = 1 << other.gameObject.layer;
-            
-                print(other.gameObject.name + " has left");
-            
-                if (enablerLayer == (enablerLayer | (otherMask)))
-                {
 
-                    _insiderLayer ^= otherMask;
-                }
-
-                if (_insiderLayer != enablerLayer)
+                if ((otherMask | enablerLayer) == enablerLayer)
                 {
-                    _anim.SetTrigger("ToggleOff");
-                    _canPress = false;
+                    _keys--;
                 }
             }
 
             else
             {
-                Transform otherTrans = other.transform;
-                
-                if (enablerPlayers.Contains(otherTrans))
+                if (enablerPlayers.Contains(other.transform))
                 {
-                    _insidersTransform.Remove(otherTrans);
+                    _keys--;
                 }
-                
-                if (_insidersTransform.Count < enablerPlayers.Length)
-                {
-                    _anim.SetTrigger("ToggleOff");
-                    _canPress = false;
-                } 
             }
-
         }
+        
+        
+        
+        
+        
+        
+        
+        
         
         public override void Trigger()
         {

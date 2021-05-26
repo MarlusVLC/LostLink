@@ -18,25 +18,26 @@ public class MainMovement : MonoBehaviour
     };
     [Tooltip("Either Player1 or Player2")]
     [SerializeField]private string controls; //Player1 ou Player2
-    [Space]
+    [Space(10)]
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Vector2 groundCheckBoxPos;
     [SerializeField] private Vector2 groundCheckBoxSize;
     [SerializeField] private LayerMask trapLayer;
-    [Space]
-    // [SerializeField] private float horizontalMoveRate;
+    [Space(10)]
+    [SerializeField] private float horizontalMoveRate;
     [SerializeField] private float jumpMoveRate;
     [SerializeField] private float deathHeight = -10; //TALVEZ TENHA QUE MUDAR DEPOIS
     // [SerializeField] private float DEFAULT_coyoteTime;
-    [SerializeField] private float DEFAULT_jumpBuffer;
-    [SerializeField] private float hDampingBasic;
-    [SerializeField] private float hDampingStop;
-    [SerializeField] private float hDampingTurn;
-    [SerializeField] private float jumpHDampingBasic;
-    [SerializeField] private float jumpHDampingStop;
-    [SerializeField] private float jumpHDampingTurn;
-    [SerializeField] private float jumpCut;
-    [SerializeField] private float freeFallForce;
+    [Space(10)]
+    [Range(0,1)][SerializeField] private float DEFAULT_jumpBuffer;
+    [Range(0,1)][SerializeField] private float hDampingBasic;
+    [Range(0,1)][SerializeField] private float hDampingStop;
+    [Range(0,1)][SerializeField] private float hDampingTurn;
+    [Range(0,1)][SerializeField] private float jumpHDampingBasic;
+    [Range(0,1)][SerializeField] private float jumpHDampingStop;
+    [Range(0,1)][SerializeField] private float jumpHDampingTurn;
+    [Range(0,1)][SerializeField] private float jumpCut;
+    [Range(0,1)][SerializeField] private float freeFallForce;
 
     
     private Rigidbody2D _rb;
@@ -64,7 +65,7 @@ public class MainMovement : MonoBehaviour
 
     void Start()
     {
-        GameManager.getInstance.SetRespawnState(this.gameObject, transform.position, _rb.velocity, _rb.rotation);
+        GameManager.getInstance.SetRespawnState(gameObject, transform.position, _rb.velocity, _rb.rotation);
     }
 
 
@@ -88,11 +89,13 @@ public class MainMovement : MonoBehaviour
         }
 
 
+        #region Horizontal Movement
+
         if (_areMovementsDamped)
         {
             float horizontalVelocity = _rb.velocity.x;
         
-            horizontalVelocity += Input.GetAxisRaw("Horizontal"+controls);
+            horizontalVelocity += Input.GetAxisRaw("Horizontal"+controls) * horizontalMoveRate;
             if (_rb.velocity.y == 0)
             {
                 if (Mathf.Abs(Input.GetAxisRaw("Horizontal"+controls)) < 0.01f)
@@ -114,15 +117,15 @@ public class MainMovement : MonoBehaviour
         
             _rb.velocity = new Vector2(horizontalVelocity, _rb.velocity.y);
         }
-       
+        
+        #endregion
 
-        
-        
-        
-        // _canJump = _boxCollider.IsTouchingLayers(groundLayer) || _coyoteTime > 0;
+
+
+        #region Jump Process
+
         _canJump =  Physics2D.OverlapBox((Vector2)transform.position + groundCheckBoxPos, groundCheckBoxSize, 0,
             groundLayer) || _coyoteTime > 0;
-        // _animator.SetBool("Can Jump", _canJump);
 
 
         _jumpBuffer -= Time.deltaTime;
@@ -131,14 +134,13 @@ public class MainMovement : MonoBehaviour
             _jumpBuffer = DEFAULT_jumpBuffer;
         }
 
-        if ((_jumpBuffer > 0) && _canJump)
+        if (_jumpBuffer > 0 && _canJump)
         {
             _rb.velocity = new Vector2(_rb.velocity.x, jumpMoveRate);
             _coyoteTime = 0;
-            // _animator.SetBool("Has Jumped Once", true);
         }
-
-        // if (Input.GetButtonUp("Jump"+controls))
+        
+        
         if (Input.GetButtonUp("Jump"+controls))
         {
             if (_rb.velocity.y > jumpMoveRate * jumpCut)
@@ -146,8 +148,14 @@ public class MainMovement : MonoBehaviour
                 _rb.velocity = new Vector2(_rb.velocity.x, jumpMoveRate * jumpCut);
             }
         }
+
+        // if (!_canJump && Input.GetButtonDown("Jump" + controls))
+        // {
+        //     FreeFall();
+        // }
+
+        #endregion
         
-        // FreeFall();
     }
     
     
@@ -169,17 +177,14 @@ public class MainMovement : MonoBehaviour
 
     private void FreeFall()
     {
-        if (!_canJump && Input.GetButtonDown("Jump"+controls))
-        {
-            _rb.AddForce(new Vector2(0,-freeFallForce));
-            _jumpBuffer = 0;
-        }
+        _rb.AddForce(new Vector2(0,-freeFallForce), ForceMode2D.Impulse);
+        _jumpBuffer = 0;
     }
 
 
     private void Die()
     {
-        RespawnState respawnState = GameManager.getInstance.GetRespawnState(this.gameObject);
+        RespawnState respawnState = GameManager.getInstance.GetRespawnState(gameObject);
         transform.position = respawnState.Position;
         _rb.rotation = respawnState.Rotation;
         _rb.velocity = respawnState.Velocity;
@@ -211,5 +216,6 @@ public class MainMovement : MonoBehaviour
         get { return _canJump; }
     }
     
-    
+
+    public string Controls => controls;
 }

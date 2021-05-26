@@ -52,4 +52,6 @@ public class CameraExpansion : MonoBehaviour
             mainCam.transform.position = new Vector3(camPosition.x, mainCam.orthographicSize-10, camPosition.z);
         }
     }
+    
+
 }

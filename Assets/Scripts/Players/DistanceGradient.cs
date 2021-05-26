@@ -14,7 +14,6 @@ public class DistanceGradient : MonoBehaviour
     private GameObject _redOne, _blueOne;
     private SpriteRenderer _redRenderer, _blueRenderer;
 
-    // private float _currentMaximumDist_X;
     private float _currentDist;
 
 
@@ -44,7 +43,6 @@ public class DistanceGradient : MonoBehaviour
     private void UpdateColor(float dist)
     {
         float additiveColor = primaryScale / Mathf.Clamp(dist/gradientSmoothing, 1,float.PositiveInfinity);
-        // Debug.Log(dist);
         _blueRenderer.color = new Color(additiveColor, 0, primaryScale);
         _redRenderer.color = new Color(primaryScale, 0, additiveColor);
     }

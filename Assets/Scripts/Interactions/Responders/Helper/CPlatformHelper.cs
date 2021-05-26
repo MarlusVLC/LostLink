@@ -5,6 +5,8 @@ namespace Aux_Classes
 {
     public class CPlatformHelper : MonoBehaviour
     {
+
+        private PositionCheckingBox _checkingBox;
         
         private enum Direction
         {
@@ -32,6 +34,7 @@ namespace Aux_Classes
         private void Awake()
         {
             _bgColor = transform.GetComponent<SpriteRenderer>().color;
+            _checkingBox = GetComponent<PositionCheckingBox>();
         }
 
         private void Start()
@@ -55,12 +58,12 @@ namespace Aux_Classes
         {
             for (int i = 0; i < signRenderers.Length; i++)
             {
-                if (_mainControlScript.isBlocked(i) && signRenderers[i].color == Color.white)
+                if (_checkingBox.IsBlocked(i) && signRenderers[i].color == Color.white)
                 {
                     Debug.Log(i.ToString());
                     signRenderers[i].color = _bgColor;
                 }
-                else if (!_mainControlScript.isBlocked(i) && signRenderers[i].color == _bgColor)
+                else if (!_checkingBox.IsBlocked(i) && signRenderers[i].color == _bgColor)
                 {
                     signRenderers[i].color = Color.white;
                 }

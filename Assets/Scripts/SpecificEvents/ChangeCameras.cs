@@ -83,7 +83,8 @@ namespace SpecificEvents
             if (_animsFinished >= 2)
                 _framesFinishedAfterInitialCamDeactivation++;
 
-            if (_redOne.position.y > 35f && _blueOne.position.y > 35f)
+            if (_redOne.position.y > 35f && _blueOne.position.y > 35f 
+                || Mathf.Abs(_redOne.position.x - _blueOne.position.x) >= 50f)
             {
                 SetSplitScreen();
             }

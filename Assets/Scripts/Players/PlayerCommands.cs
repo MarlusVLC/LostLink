@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Aux_Classes;
-using Interactions.Interactables;
+﻿using Interactions.Interactables;
 using UnityEngine;
 
 public class PlayerCommands : MonoBehaviour
@@ -13,18 +9,15 @@ public class PlayerCommands : MonoBehaviour
     private Collider2D _detectedCollider;
 
     private Interactable _interactable;
-    // Start is called before the first frame update
     void Awake()
     {
         _interactable = null;
     }
 
-    // Update is called once per frame
     void Update()
     {
         _detectedCollider = Physics2D.OverlapBox(transform.position, detectorBoxSize, 0,
             1 << LayerMask.NameToLayer("Interactable"));
-        // Debug.Log(_detectedCollider);
 
         if (_detectedCollider)
         {
@@ -47,7 +40,7 @@ public class PlayerCommands : MonoBehaviour
 
     private void ActUpon(Interactable interactable)
     {
-        if (Input.GetButtonDown("Interact" + controls))
+        if (Input.GetButton("Interact" + controls))
         {
             interactable.Trigger();
         }

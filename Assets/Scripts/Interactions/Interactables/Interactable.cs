@@ -43,7 +43,6 @@ namespace Interactions.Interactables
         {
             if (!gameObject.layer.Equals(_interactableLayerNum))
             {
-                // Debug.Log("layer: " + _interactableLayerNum);
                 gameObject.layer = _interactableLayerNum;
 
             }
