@@ -6,7 +6,8 @@ using UnityEngine;
 [ExecuteAlways]
 public class DistanceGradient : MonoBehaviour
 {
-    [Space] [Header("Color features")]
+    [Space] [Header("Color features")] 
+    [SerializeField] private bool blendColors;
     [SerializeField] [Range(0,1)] private float primaryScale;
     [SerializeField] private float gradientSmoothing;
 
@@ -42,8 +43,12 @@ public class DistanceGradient : MonoBehaviour
 
     private void UpdateColor(float dist)
     {
-        float additiveColor = primaryScale / Mathf.Clamp(dist/gradientSmoothing, 1,float.PositiveInfinity);
-        _blueRenderer.color = new Color(additiveColor, 0, primaryScale);
-        _redRenderer.color = new Color(primaryScale, 0, additiveColor);
+        if (blendColors)
+        {
+            float additiveColor = primaryScale / Mathf.Clamp(dist/gradientSmoothing, 1,float.PositiveInfinity);
+            _blueRenderer.color = new Color(additiveColor, 0, primaryScale);
+            _redRenderer.color = new Color(primaryScale, 0, additiveColor);
+        }
+
     }
 }

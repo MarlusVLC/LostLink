@@ -5,16 +5,19 @@ using UnityEngine;
 public class PlayerVisualCommands : MonoBehaviour
 {
     private Rigidbody2D _rb;
+    private Vector3 _ls;
+    private Transform Transform;
     void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        TryGetComponent(out Transform);
     }
 
     
     void Update()
     {
-        Vector3 _ls = transform.localScale;
+        _ls = Transform.localScale;
         if ((Mathf.Sign(_ls.x) != Mathf.Sign(_rb.velocity.x)) && _rb.velocity.x != 0)
-            transform.localScale = new Vector3(-1 * _ls.x, _ls.y, _ls.z);
+            Transform.localScale = new Vector3(-1 * _ls.x, _ls.y, _ls.z);
     }
 }

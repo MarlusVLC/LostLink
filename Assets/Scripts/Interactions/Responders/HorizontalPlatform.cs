@@ -39,13 +39,7 @@ namespace Aux_Classes
                 StartCoroutine(LinearlyInterpolate(_canReturn ? -moveGoal : moveGoal, lerpTime));
             }
         }
-
-        public void Update()
-        {
-            // print(Vector2.Lerp(new Vector2(0,0), new Vector2(1,1), currFrame));
-            // print(new Vector2(0,0) * (1-currFrame) + new Vector2(1,1)*currFrame);
-            // transform.localPosition = Vector2.Lerdp(new Vector2(0, 0), new Vector2(1, 1), currFrame);
-        }
+        
 
 
         private IEnumerator LinearlyInterpolate(Vector2 endPos, float lerpTime)

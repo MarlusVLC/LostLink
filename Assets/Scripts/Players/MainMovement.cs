@@ -41,15 +41,16 @@ public class MainMovement : MonoBehaviour
 
     
     private Rigidbody2D _rb;
-    // private BoxCollider2D _boxCollider;
-    // private CapsuleCollider2D _capsuleCollider;
     private MoveState _moveState;
-    // private Animator _animator;
     private float _coyoteTime;
     private float _jumpBuffer;
     private int _numberOfJumps;
     private bool _canJump;
     private bool _areMovementsDamped;
+    
+    private Animator _animator;
+    private int _animVertSpeed = Animator.StringToHash("VerticalSpeed");
+    private int _animHorSpeed = Animator.StringToHash("HorizontalSpeed");
     
     
     
@@ -57,10 +58,9 @@ public class MainMovement : MonoBehaviour
     void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
-        // _boxCollider = GetComponent<BoxCollider2D>();
         _areMovementsDamped = true;
-        // _capsuleCollider = GetComponent<CapsuleCollider2D>();
-        // _animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
+        
     }
 
     void Start()
@@ -116,7 +116,11 @@ public class MainMovement : MonoBehaviour
             }
         
             _rb.velocity = new Vector2(horizontalVelocity, _rb.velocity.y);
+            
+            _animator.SetFloat(_animHorSpeed, Mathf.Abs(horizontalVelocity));
         }
+        
+        
         
         #endregion
 
@@ -148,6 +152,8 @@ public class MainMovement : MonoBehaviour
                 _rb.velocity = new Vector2(_rb.velocity.x, jumpMoveRate * jumpCut);
             }
         }
+        
+        _animator.SetFloat(_animVertSpeed, _rb.velocity.y);
 
         // if (!_canJump && Input.GetButtonDown("Jump" + controls))
         // {
