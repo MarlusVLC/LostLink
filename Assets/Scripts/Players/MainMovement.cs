@@ -51,6 +51,7 @@ public class MainMovement : MonoBehaviour
     private Animator _animator;
     private int _animVertSpeed = Animator.StringToHash("VerticalSpeed");
     private int _animHorSpeed = Animator.StringToHash("HorizontalSpeed");
+    private int _animPrepareJump = Animator.StringToHash("PrepareJump");
     
     
     
@@ -60,7 +61,6 @@ public class MainMovement : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _areMovementsDamped = true;
         _animator = GetComponent<Animator>();
-        
     }
 
     void Start()
@@ -87,6 +87,7 @@ public class MainMovement : MonoBehaviour
         {
             Die();
         }
+        
 
 
         #region Horizontal Movement
@@ -135,11 +136,13 @@ public class MainMovement : MonoBehaviour
         _jumpBuffer -= Time.deltaTime;
         if (Input.GetButtonDown("Jump"+controls))
         {
-            _jumpBuffer = DEFAULT_jumpBuffer;
+            // _jumpBuffer = DEFAULT_jumpBuffer;
         }
 
-        if (_jumpBuffer > 0 && _canJump)
+        if (/*_jumpBuffer > 0*/ Input.GetButtonDown("Jump"+controls) && _canJump)
         {
+            // StartCoroutine(PrepareJump(new Vector2(_rb.velocity.x, jumpMoveRate),0.1f));
+            _animator.SetTrigger(_animPrepareJump);
             _rb.velocity = new Vector2(_rb.velocity.x, jumpMoveRate);
             _coyoteTime = 0;
         }
@@ -194,6 +197,14 @@ public class MainMovement : MonoBehaviour
         transform.position = respawnState.Position;
         _rb.rotation = respawnState.Rotation;
         _rb.velocity = respawnState.Velocity;
+    }
+
+    private IEnumerator PrepareJump(Vector2 jumpRate, float preparationTime)
+    {
+        _animator.SetTrigger(_animPrepareJump);
+        yield return new WaitForSeconds(preparationTime);
+        _rb.velocity = jumpRate;
+        _coyoteTime = 0;
     }
 
     private void DEBUGMarkCheckpoint()
