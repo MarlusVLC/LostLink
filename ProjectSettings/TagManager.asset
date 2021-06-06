@@ -27,8 +27,8 @@ TagManager:
   - Red Player
   - Blue Player
   - PostProcessing
-  - 
-  - 
+  - Lighting Internal (Game)
+  - Lighting Internal (Scene)
   - 
   - 
   - 
@@ -50,4 +50,10 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 1317355999
+    locked: 0
+  - name: My Sprites
+    uniqueID: 3961200907
+    locked: 0
+  - name: My Lighting
+    uniqueID: 2828629275
     locked: 0
