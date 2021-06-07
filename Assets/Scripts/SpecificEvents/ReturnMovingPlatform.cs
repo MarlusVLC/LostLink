@@ -19,17 +19,14 @@ public class ReturnMovingPlatform : MonoBehaviour
     private GameObject associatedLight;
     
 
-    // private Animator _anim;
-    private HorizontalPlatform _responder;
+    private SingleMovementResponder _responder;
     
     void Awake()
     {
-        // _anim = GetComponent<Animator>();
-        _responder = GetComponent<HorizontalPlatform>();
+        _responder = GetComponent<SingleMovementResponder>();
         returnPoint_back *= Mathf.Sign(transform.position.x);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Mathf.Abs(player.position.x) < Math.Abs(returnPoint_back)

@@ -39,17 +39,26 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
+  - name: InsideTemple
+    uniqueID: 309904835
+    locked: 0
+  - name: OutsideTemple
+    uniqueID: 3953308851
+    locked: 0
+  - name: Cellar
+    uniqueID: 2234173691
     locked: 0
   - name: Background
     uniqueID: 3452692875
     locked: 0
-  - name: Character
-    uniqueID: 2456764831
-    locked: 0
   - name: Foreground
     uniqueID: 1317355999
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Character
+    uniqueID: 2456764831
     locked: 0
   - name: My Sprites
     uniqueID: 3961200907

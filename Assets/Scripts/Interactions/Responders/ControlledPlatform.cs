@@ -17,6 +17,7 @@ namespace Aux_Classes
         }
 
         [SerializeField] private MovementType movementType;
+        [SerializeField] private bool useRelativePosition;
         [SerializeField] private float timeLimit;
         [SerializeField] private float speed;
 
@@ -42,7 +43,7 @@ namespace Aux_Classes
 
             goalDist = messagePosition;
             _initialPos = transform.position;
-            _target = _initialPos + goalDist;
+            _target = useRelativePosition ? _initialPos + goalDist : goalDist;
 
             switch (movementType)
             {

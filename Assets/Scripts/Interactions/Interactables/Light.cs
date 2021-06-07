@@ -25,6 +25,8 @@ namespace Interactions.Interactables
         {
             _canPress = false;
             _anim = transform.GetComponentInParent<Animator>();
+            if (!_anim)
+                TryGetComponent(out _anim);
             _keySet = useMask ? enablerLayer.value.CountSetBits() : enablerPlayers.Length ;
         }
         

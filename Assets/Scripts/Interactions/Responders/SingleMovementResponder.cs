@@ -4,15 +4,14 @@ using UnityEngine;
 
 namespace Aux_Classes
 {
-    public class HorizontalPlatform : Responder
+    public class SingleMovementResponder : Responder
     {
 
         [SerializeField] private Vector2 moveGoal;
+        [SerializeField] private bool useRelativeGoal;
         [SerializeField] private float lerpTime;
         [SerializeField] private bool isLinear;
         
-        private Animator _anim;
-        private int _animOn, _animOff;
 
         private Vector2 _initialPos;
         private bool _canReturn;
@@ -20,20 +19,10 @@ namespace Aux_Classes
 
 
 
-        // private float currFrame = 0.0f;
 
-
-        private void Awake()
-        {
-            _anim = GetComponent<Animator>();
-            // _initialPos = transform.position;
-            // _animOn = Animator.StringToHash("On");
-            // _animOff = Animator.StringToHash("Off");
-        }
         
         public override void React(Vector2 messagePosition = new Vector2())
         {
-            // _anim.SetTrigger(_animOn);
             if (!_isInterpolating)
             {
                 StartCoroutine(LinearlyInterpolate(_canReturn ? -moveGoal : moveGoal, lerpTime));
@@ -50,7 +39,8 @@ namespace Aux_Classes
             var timer = 0.0f;
             float t;
             print("POSICAO: " + startPos);
-            endPos = startPos + endPos;
+            if (useRelativeGoal)
+                endPos = startPos + endPos;
             print("ENDPOS: " + endPos);
         
             // var interpolationCounter = 1 / numberOfFrames;

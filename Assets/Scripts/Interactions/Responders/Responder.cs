@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Aux_Classes
 {
+    [DisallowMultipleComponent]
     public abstract class Responder : MonoBehaviour
     {
         //TODO: Perguntar pro Breno se há um meio melhor

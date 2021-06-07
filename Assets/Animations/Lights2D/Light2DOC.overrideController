@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Light2DOC
+  m_Controller: {fileID: 9100000, guid: a1867bc8760448f4abfe6ef56104f7bc, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 2b40c8c2222ed9c4d873e9f0e74fb62c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c4a1ce7ad4a60ab44aea67825d67ab46, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e1a26bd0415bb8c46ba08b4c4c4d2277, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: dcf1320e4c1ae60408eec1518230180b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: ca1a4db24bac4f6479aae34c4767fc79, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2061151e53c80da42b03f6c79c2399ea, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 8397e5e3f79c16642a1232aaa0888da7, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8087eca9d05cce14f951e65c63abd59e, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: fedf0bc90dd33fd429daca4546c359ef, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8087eca9d05cce14f951e65c63abd59e, type: 2}
