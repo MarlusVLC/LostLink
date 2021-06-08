@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -37,9 +37,7 @@ public class MainMovement : MonoBehaviour
     [Range(0,1)][SerializeField] private float jumpHDampingStop;
     [Range(0,1)][SerializeField] private float jumpHDampingTurn;
     [Range(0,1)][SerializeField] private float jumpCut;
-    [Range(0,1)][SerializeField] private float freeFallForce;
-
-    
+    [Range(0,1)][SerializeField] private float freeFallForce;    
     private Rigidbody2D _rb;
     private MoveState _moveState;
     private float _coyoteTime;
@@ -47,7 +45,6 @@ public class MainMovement : MonoBehaviour
     private int _numberOfJumps;
     private bool _canJump;
     private bool _areMovementsDamped;
-    
     private Animator _animator;
     private int _animVertSpeed = Animator.StringToHash("VerticalSpeed");
     private int _animHorSpeed = Animator.StringToHash("HorizontalSpeed");
