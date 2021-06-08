@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38d48dca43f35be4995aba01ea0c261f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _responders: []
-  enablerPlayers: []
+  _responders:
+  - {fileID: 0}
+  enablerPlayers:
+  - {fileID: 0}
   enablerLayer:
     serializedVersion: 2
     m_Bits: 262144
@@ -25,6 +27,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3098601156601895534, guid: ca6f1d4d34bae674bbfd4baeecb8405f,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 8ba2052d4efa70840b4d5accfcd9d101,
+        type: 2}
     - target: {fileID: 7571064808511639988, guid: ca6f1d4d34bae674bbfd4baeecb8405f,
         type: 3}
       propertyPath: m_RootOrder
@@ -33,12 +41,12 @@ PrefabInstance:
     - target: {fileID: 7571064808511639988, guid: ca6f1d4d34bae674bbfd4baeecb8405f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.499317
+      value: 13.6694975
       objectReference: {fileID: 0}
     - target: {fileID: 7571064808511639988, guid: ca6f1d4d34bae674bbfd4baeecb8405f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.337781
+      value: -8.1
       objectReference: {fileID: 0}
     - target: {fileID: 7571064808511639988, guid: ca6f1d4d34bae674bbfd4baeecb8405f,
         type: 3}
@@ -83,7 +91,57 @@ PrefabInstance:
     - target: {fileID: 7571064808511639989, guid: ca6f1d4d34bae674bbfd4baeecb8405f,
         type: 3}
       propertyPath: m_Name
-      value: Sleeper_RedLight2D
+      value: 1_Sleeper_RedLight2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 7571064808511639991, guid: ca6f1d4d34bae674bbfd4baeecb8405f,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.00819952
+      objectReference: {fileID: 0}
+    - target: {fileID: 7571064808511639991, guid: ca6f1d4d34bae674bbfd4baeecb8405f,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7571064808511639991, guid: ca6f1d4d34bae674bbfd4baeecb8405f,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.2924528
+      objectReference: {fileID: 0}
+    - target: {fileID: 7571064808511639991, guid: ca6f1d4d34bae674bbfd4baeecb8405f,
+        type: 3}
+      propertyPath: m_LightVolumeOpacity
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7571064808511639991, guid: ca6f1d4d34bae674bbfd4baeecb8405f,
+        type: 3}
+      propertyPath: m_ShadowVolumeIntensity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7571064808511639991, guid: ca6f1d4d34bae674bbfd4baeecb8405f,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7571064808511639991, guid: ca6f1d4d34bae674bbfd4baeecb8405f,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[0]
+      value: -842274421
+      objectReference: {fileID: 0}
+    - target: {fileID: 7571064808511639991, guid: ca6f1d4d34bae674bbfd4baeecb8405f,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[1]
+      value: -1838202465
+      objectReference: {fileID: 0}
+    - target: {fileID: 7571064809486365099, guid: ca6f1d4d34bae674bbfd4baeecb8405f,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7571064809486365099, guid: ca6f1d4d34bae674bbfd4baeecb8405f,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -842274421
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca6f1d4d34bae674bbfd4baeecb8405f, type: 3}

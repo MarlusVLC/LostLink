@@ -6,11 +6,13 @@ namespace Aux_Classes
 {
     public class SingleMovementResponder : Responder
     {
-
         [SerializeField] private Vector2 moveGoal;
         [SerializeField] private bool useRelativeGoal;
+        [SerializeField] private bool ignoreX;
+        [SerializeField] private bool ignoreY;
         [SerializeField] private float lerpTime;
         [SerializeField] private bool isLinear;
+
         
 
         private Vector2 _initialPos;
@@ -25,13 +27,13 @@ namespace Aux_Classes
         {
             if (!_isInterpolating)
             {
-                StartCoroutine(LinearlyInterpolate(_canReturn ? -moveGoal : moveGoal, lerpTime));
+                StartCoroutine(InterpolatingMovement(_canReturn ? -moveGoal : moveGoal, lerpTime));
             }
         }
         
 
 
-        private IEnumerator LinearlyInterpolate(Vector2 endPos, float lerpTime)
+        private IEnumerator InterpolatingMovement(Vector2 endPos, float lerpTime)
         {
             _isInterpolating = true;
             
@@ -41,6 +43,8 @@ namespace Aux_Classes
             print("POSICAO: " + startPos);
             if (useRelativeGoal)
                 endPos = startPos + endPos;
+            endPos.x = ignoreX ? transform.position.x : endPos.x;
+            endPos.y = ignoreY ? transform.position.y : endPos.y;
             print("ENDPOS: " + endPos);
         
             // var interpolationCounter = 1 / numberOfFrames;
@@ -58,7 +62,7 @@ namespace Aux_Classes
             }
             transform.position = endPos;
             _canReturn = !_canReturn;
-            print("Can return: " + _canReturn);
+            // print("Can return: " + _canReturn);
 
             _isInterpolating = false;
         }
@@ -67,7 +71,7 @@ namespace Aux_Classes
         {
             if (!_isInterpolating)
             {
-                StartCoroutine(LinearlyInterpolate(-moveGoal, lerpTime));
+                StartCoroutine(InterpolatingMovement(-moveGoal, lerpTime));
             }
         }
         
