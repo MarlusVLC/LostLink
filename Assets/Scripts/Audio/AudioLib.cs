@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class AudioLib : MonoBehaviour
 {
     [Space(10)][Header("Audio")]
@@ -16,6 +17,6 @@ public class AudioLib : MonoBehaviour
 
     public void RunSFX()
     {
-        _audioSource.PlayOneShot(capa_impacto_grande_final);
+        _audioSource.PlayOneShot(Random.Range(0.0f, 1.0f) < 0.5 ? capa_impacto_grande_final : capa_transicao);
     } 
 }

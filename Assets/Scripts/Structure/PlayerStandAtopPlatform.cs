@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Aux_Classes;
 using UnityEngine;
 
 
@@ -9,6 +11,7 @@ public class PlayerStandAtopPlatform : MonoBehaviour
 {
     // [SerializeField] private GameObject player;
     [SerializeField] private LayerMask attachableLayer;
+    [SerializeField] private GameObject[] activables;
 
     private Transform _originalParent;
 
@@ -27,6 +30,7 @@ public class PlayerStandAtopPlatform : MonoBehaviour
             Debug.Log("Hit the top: " + other.GetContact(0).normal);
             _originalParent = other.transform.parent;
             other.transform.SetParent(transform);
+            activables.Where(s => !s.activeSelf).ForEach(s => s.SetActive(true));
         }
     }
 
@@ -39,5 +43,7 @@ public class PlayerStandAtopPlatform : MonoBehaviour
             return;
         }
         other.transform.SetParent(_originalParent);
+        activables.Where(s => s.activeSelf).ForEach(s => s.SetActive(false));
+
     }
 }
