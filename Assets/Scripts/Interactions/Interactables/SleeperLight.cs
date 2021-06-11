@@ -10,7 +10,9 @@ namespace Interactions.Interactables
     public class SleeperLight : Light
     {
 
-    
+        [SerializeField] private bool destroyOnExit;
+
+        private bool _isPlayingDefunctAnim;
     
         public override void Trigger()
         {
@@ -18,8 +20,15 @@ namespace Interactions.Interactables
             {
                 // _affectedAnim.SetTrigger("On");  //> Isso agora é responsabilidade do responder
                 Interact();
+                _isPlayingDefunctAnim = true;
                 _anim.SetTrigger("Defunct");
             }    
+        }
+
+        private void OnDisable()
+        {
+            if (destroyOnExit && _isPlayingDefunctAnim)
+                Destroy(gameObject);
         }
     }
 }

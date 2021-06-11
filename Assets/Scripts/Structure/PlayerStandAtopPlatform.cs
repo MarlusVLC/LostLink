@@ -35,6 +35,11 @@ public class PlayerStandAtopPlatform : MonoBehaviour
     }
 
 
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        activables.Where(s => s && !s.activeSelf).ForEach(s => s.SetActive(true));
+    }
+
 
     private void OnCollisionExit2D(Collision2D other)
     {
@@ -43,7 +48,7 @@ public class PlayerStandAtopPlatform : MonoBehaviour
             return;
         }
         other.transform.SetParent(_originalParent);
-        activables.Where(s => s.activeSelf).ForEach(s => s.SetActive(false));
+        activables.Where(s =>  s.activeSelf).ForEach(s => s.SetActive(false));
 
     }
 }
