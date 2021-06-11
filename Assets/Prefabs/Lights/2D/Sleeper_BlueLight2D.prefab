@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38d48dca43f35be4995aba01ea0c261f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _responders:
+  <HasContinuousInteraction>k__BackingField: 0
+  responders:
   - {fileID: 0}
   enablerPlayers:
   - {fileID: 0}
@@ -32,6 +33,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 22100000, guid: 8ba2052d4efa70840b4d5accfcd9d101,
         type: 2}
+    - target: {fileID: 4760764406556203312, guid: 584c671b2e201874e9911bbf03072b98,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760764406556203312, guid: 584c671b2e201874e9911bbf03072b98,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760764406556203312, guid: 584c671b2e201874e9911bbf03072b98,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4760764406556203315, guid: 584c671b2e201874e9911bbf03072b98,
         type: 3}
       propertyPath: m_SortingLayer
@@ -50,12 +66,12 @@ PrefabInstance:
     - target: {fileID: 4760764407061035308, guid: 584c671b2e201874e9911bbf03072b98,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.24
+      value: -32.69
       objectReference: {fileID: 0}
     - target: {fileID: 4760764407061035308, guid: 584c671b2e201874e9911bbf03072b98,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.06
+      value: 11.06
       objectReference: {fileID: 0}
     - target: {fileID: 4760764407061035308, guid: 584c671b2e201874e9911bbf03072b98,
         type: 3}
@@ -100,7 +116,7 @@ PrefabInstance:
     - target: {fileID: 4760764407061035309, guid: 584c671b2e201874e9911bbf03072b98,
         type: 3}
       propertyPath: m_Name
-      value: 1_Sleeper_BlueLight2D
+      value: 2_Sleeper_BlueLight2D (1)
       objectReference: {fileID: 0}
     - target: {fileID: 4760764407061035311, guid: 584c671b2e201874e9911bbf03072b98,
         type: 3}
@@ -136,6 +152,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.data[1]
       value: -1838202465
+      objectReference: {fileID: 0}
+    - target: {fileID: 4988222099005715005, guid: 584c671b2e201874e9911bbf03072b98,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4988222099005715005, guid: 584c671b2e201874e9911bbf03072b98,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 584c671b2e201874e9911bbf03072b98, type: 3}

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3051d2af20f243b98c937f63a7fee15e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _responders:
+  <HasContinuousInteraction>k__BackingField: 0
+  responders:
   - {fileID: 0}
   enablerPlayers: []
   enablerLayer:
@@ -20,7 +21,7 @@ MonoBehaviour:
     m_Bits: 524288
   useMask: 1
   inputPosition: 1
-  relativeGoal: {x: 28, y: 0}
+  relativeGoal: {x: 10.5, y: 0}
 --- !u!1001 &8043908292841673713
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -107,6 +108,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.data[1]
       value: -842274421
+      objectReference: {fileID: 0}
+    - target: {fileID: 4988222099005715005, guid: 584c671b2e201874e9911bbf03072b98,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4988222099005715005, guid: 584c671b2e201874e9911bbf03072b98,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 584c671b2e201874e9911bbf03072b98, type: 3}
