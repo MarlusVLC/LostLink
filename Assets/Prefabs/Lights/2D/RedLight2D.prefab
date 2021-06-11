@@ -93,5 +93,15 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7625428959435914492, guid: 584c671b2e201874e9911bbf03072b98,
+        type: 3}
+      propertyPath: light
+      value: 
+      objectReference: {fileID: 8300000, guid: d394fdfa5d490c140bfc7a06ec0fe0c2, type: 3}
+    - target: {fileID: 7625428959435914492, guid: 584c671b2e201874e9911bbf03072b98,
+        type: 3}
+      propertyPath: lightSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: d394fdfa5d490c140bfc7a06ec0fe0c2, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 584c671b2e201874e9911bbf03072b98, type: 3}

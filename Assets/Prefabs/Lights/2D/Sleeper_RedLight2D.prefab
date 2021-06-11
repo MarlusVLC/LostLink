@@ -1,5 +1,22 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-2248151500769377209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5034173363290904891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86bfce93f0435ed46b09dfc53ef58d4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  capa_impacto_grande_finalSFX: {fileID: 0}
+  capa_transicaoSFX: {fileID: 0}
+  sliding_doorSFX: {fileID: 0}
+  lightSFX: {fileID: 8300000, guid: d394fdfa5d490c140bfc7a06ec0fe0c2, type: 3}
+  light_activateSFX: {fileID: 8300000, guid: c7981fb7b22fbca479c5bfd40d91995a, type: 3}
 --- !u!114 &2951718585195280933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20,6 +37,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 262144
   useMask: 1
+  audioLib: {fileID: 0}
 --- !u!1001 &3228281952716720270
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -91,7 +109,7 @@ PrefabInstance:
     - target: {fileID: 7571064808511639989, guid: ca6f1d4d34bae674bbfd4baeecb8405f,
         type: 3}
       propertyPath: m_Name
-      value: 1_Sleeper_RedLight2D
+      value: Sleeper_RedLight2D
       objectReference: {fileID: 0}
     - target: {fileID: 7571064808511639991, guid: ca6f1d4d34bae674bbfd4baeecb8405f,
         type: 3}
@@ -143,7 +161,8 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -842274421
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4815058739018683492, guid: ca6f1d4d34bae674bbfd4baeecb8405f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ca6f1d4d34bae674bbfd4baeecb8405f, type: 3}
 --- !u!1 &5034173363290904891 stripped
 GameObject:

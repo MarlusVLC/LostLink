@@ -11,7 +11,8 @@ namespace Interactions.Interactables
         [SerializeField] private Transform[] enablerPlayers;
         [SerializeField] private LayerMask enablerLayer;
         [SerializeField] private bool useMask = true;
-    
+        [SerializeField] private AudioLib audioLib;
+
         private BoxCollider2D _presenceDetector;
         protected Animator _anim;
     
@@ -28,8 +29,11 @@ namespace Interactions.Interactables
             if (!_anim)
                 TryGetComponent(out _anim);
             _keySet = useMask ? enablerLayer.value.CountSetBits() : enablerPlayers.Length ;
+
+
+            audioLib = GetComponent<AudioLib>();
         }
-        
+
         
         
         
@@ -68,6 +72,11 @@ namespace Interactions.Interactables
                 if (enablerPlayers.Contains(other.transform))
                     _keys++;
             }
+
+            if (audioLib)
+            {
+                audioLib.LightSFX();
+            }
         }
         
         
@@ -103,6 +112,11 @@ namespace Interactions.Interactables
                 {
                     _keys--;
                 }
+            }
+
+            if (audioLib)
+            {
+                StartCoroutine(audioLib.StopLightSFX());
             }
         }
         

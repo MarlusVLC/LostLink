@@ -979,10 +979,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86bfce93f0435ed46b09dfc53ef58d4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  capa_impacto_grande_final: {fileID: 8300000, guid: ea731f6212daace4a87fddbe20f71715,
+  capa_impacto_grande_finalSFX: {fileID: 8300000, guid: ea731f6212daace4a87fddbe20f71715,
     type: 3}
-  capa_transicao: {fileID: 8300000, guid: e1a7ee6fc67f3374ba8d407d7deb4ce7, type: 3}
-  sliding_door: {fileID: 0}
+  capa_transicaoSFX: {fileID: 8300000, guid: e1a7ee6fc67f3374ba8d407d7deb4ce7, type: 3}
+  sliding_doorSFX: {fileID: 0}
+  lightSFX: {fileID: 0}
+  light_activateSFX: {fileID: 0}
 --- !u!82 &334337861
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1998,10 +2000,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86bfce93f0435ed46b09dfc53ef58d4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  capa_impacto_grande_final: {fileID: 8300000, guid: ea731f6212daace4a87fddbe20f71715,
+  capa_impacto_grande_finalSFX: {fileID: 8300000, guid: ea731f6212daace4a87fddbe20f71715,
     type: 3}
-  capa_transicao: {fileID: 8300000, guid: e1a7ee6fc67f3374ba8d407d7deb4ce7, type: 3}
-  sliding_door: {fileID: 0}
+  capa_transicaoSFX: {fileID: 8300000, guid: e1a7ee6fc67f3374ba8d407d7deb4ce7, type: 3}
+  sliding_doorSFX: {fileID: 0}
+  lightSFX: {fileID: 0}
+  light_activateSFX: {fileID: 0}
 --- !u!82 &626451565
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3715,9 +3719,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86bfce93f0435ed46b09dfc53ef58d4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  capa_impacto_grande_final: {fileID: 0}
-  capa_transicao: {fileID: 0}
-  sliding_door: {fileID: 8300000, guid: 1aa34e4fd03a9d34f98f8aa0c34862b2, type: 3}
+  capa_impacto_grande_finalSFX: {fileID: 0}
+  capa_transicaoSFX: {fileID: 0}
+  sliding_doorSFX: {fileID: 8300000, guid: 1aa34e4fd03a9d34f98f8aa0c34862b2, type: 3}
+  lightSFX: {fileID: 0}
+  light_activateSFX: {fileID: 0}
 --- !u!82 &1088545829
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5907,6 +5913,7 @@ GameObject:
   - component: {fileID: 1915487109}
   - component: {fileID: 1915487111}
   - component: {fileID: 1915487110}
+  - component: {fileID: 1915487112}
   m_Layer: 21
   m_Name: Buffers
   m_TagString: Untagged
@@ -5983,6 +5990,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b97cc6d050cf634db8ce54c77ba302f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1915487112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915487108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &1956242616
 GameObject:
   m_ObjectHideFlags: 0

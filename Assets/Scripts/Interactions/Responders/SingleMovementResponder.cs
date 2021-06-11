@@ -52,7 +52,7 @@ namespace Aux_Classes
 
             if (audioLib)
             {
-                audioLib.SlidingDoorOpening();
+                audioLib.SlidingDoorOpeningSFX();
             }
             
         
