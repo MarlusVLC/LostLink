@@ -12,7 +12,7 @@ namespace Aux_Classes
         [SerializeField] private bool ignoreY;
         [SerializeField] private float lerpTime;
         [SerializeField] private bool isLinear;
-
+        [SerializeField] private AudioLib audioLib;
         
 
         private Vector2 _initialPos;
@@ -21,7 +21,10 @@ namespace Aux_Classes
 
 
 
-
+        public void Start()
+        {
+            audioLib = GetComponent<AudioLib>();
+        }
         
         public override void React(Vector2 messagePosition = new Vector2())
         {
@@ -46,6 +49,12 @@ namespace Aux_Classes
             endPos.x = ignoreX ? transform.position.x : endPos.x;
             endPos.y = ignoreY ? transform.position.y : endPos.y;
             print("ENDPOS: " + endPos);
+
+            if (audioLib)
+            {
+                audioLib.SlidingDoorOpening();
+            }
+            
         
             // var interpolationCounter = 1 / numberOfFrames;
             while (timer <= lerpTime)
