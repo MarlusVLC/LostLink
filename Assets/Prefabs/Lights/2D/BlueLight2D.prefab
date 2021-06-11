@@ -84,7 +84,7 @@ PrefabInstance:
     - target: {fileID: 3475335338638376973, guid: 77ac880779af81f43871afa6b8de8840,
         type: 3}
       propertyPath: m_Name
-      value: BlueLight2D Sleeper_Variant
+      value: BlueLight2D
       objectReference: {fileID: 0}
     - target: {fileID: 3475335338638376975, guid: 77ac880779af81f43871afa6b8de8840,
         type: 3}
@@ -140,6 +140,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PointLightOuterRadius
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475335338638376975, guid: 77ac880779af81f43871afa6b8de8840,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475335338638376975, guid: 77ac880779af81f43871afa6b8de8840,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[0]
+      value: -842274421
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475335338638376975, guid: 77ac880779af81f43871afa6b8de8840,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[1]
+      value: -1838202465
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475335339207172113, guid: 77ac880779af81f43871afa6b8de8840,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475335339207172115, guid: 77ac880779af81f43871afa6b8de8840,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475335339207172115, guid: 77ac880779af81f43871afa6b8de8840,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -842274421
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475335339207172115, guid: 77ac880779af81f43871afa6b8de8840,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77ac880779af81f43871afa6b8de8840, type: 3}
