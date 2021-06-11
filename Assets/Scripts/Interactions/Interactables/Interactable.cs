@@ -8,9 +8,10 @@ namespace Interactions.Interactables
 {
     public abstract class Interactable : MonoBehaviour
     {
-        [SerializeField] protected Responder[] _responders;
+        [field: SerializeField] public bool HasContinuousInteraction { get; protected set; }
+        [SerializeField] protected Responder[] responders;
         
-        
+
         private void OnValidate()
         {
             MakeFullyInteractable(LayerMask.NameToLayer("Interactable"));
@@ -20,7 +21,7 @@ namespace Interactions.Interactables
         
         protected void Interact()
         {
-            foreach (Responder responder in _responders)
+            foreach (Responder responder in responders)
             {
                 responder.React();
             }
@@ -28,7 +29,7 @@ namespace Interactions.Interactables
         
         protected void Interact(Vector2 messageCoordinates)
         {
-            foreach (Responder responder in _responders)
+            foreach (var responder in responders)
             {
                 responder.React(messageCoordinates);
             }

@@ -61,6 +61,7 @@ namespace Aux_Classes
         
         private IEnumerator MoveTowards(float _timeLimit)
         {
+            _isMoving = true;
             float _timer = 0;
             while (_timer < _timeLimit)
             {
@@ -68,6 +69,7 @@ namespace Aux_Classes
                 
                 if (CannotMoveTowardsDirection())
                 {
+                    _isMoving = false;
                     yield break;
                 }
         
@@ -76,6 +78,7 @@ namespace Aux_Classes
                 transform.position = (_initialPos) + goalDist * _timer / timeLimit;
                 yield return null;
             }
+            _isMoving = false;
         }
         
         private IEnumerator MoveTowards()
@@ -116,5 +119,6 @@ namespace Aux_Classes
                 (goalDist.x < 0 && _checkingBox.ColliderDetectors[3])
             );
         }
+        
     }
 }
