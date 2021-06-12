@@ -1474,19 +1474,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &334337862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 334337850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d073bf44ba85c04daac49ad0fb28d66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  godSpeed: 5
 --- !u!1 &377135848
 GameObject:
   m_ObjectHideFlags: 0
@@ -2853,19 +2840,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &626451566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 626451554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d073bf44ba85c04daac49ad0fb28d66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  godSpeed: 5
 --- !u!1 &630752319
 GameObject:
   m_ObjectHideFlags: 0
@@ -3491,8 +3465,8 @@ MonoBehaviour:
   m_YDamping: 1
   m_ZDamping: 1
   m_TargetMovementOnly: 1
-  m_ScreenX: 0
-  m_ScreenY: 0
+  m_ScreenX: 0.5
+  m_ScreenY: 0.79999995
   m_CameraDistance: 10
   m_DeadZoneWidth: 0.04
   m_DeadZoneHeight: 0.04
@@ -6262,7 +6236,7 @@ MonoBehaviour:
   - {fileID: 1401531855}
   - {fileID: 203902093}
   - {fileID: 2097293802}
-  m_selectedIndex: 4
+  m_selectedIndex: 3
   m_unselectedColorMultiplier: 1
   m_defaultTilemapWindowVisible: 0
   m_displayTilemapRList: 1
@@ -6361,11 +6335,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: 3_Sleeper_RedLight2D
       objectReference: {fileID: 0}
-    - target: {fileID: 5034173363290904891, guid: a1988a43e25da6a4ea74687761d7d117,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1988a43e25da6a4ea74687761d7d117, type: 3}
 --- !u!4 &1789482368 stripped
@@ -6426,8 +6395,8 @@ MonoBehaviour:
   m_YDamping: 1
   m_ZDamping: 1
   m_TargetMovementOnly: 1
-  m_ScreenX: 0
-  m_ScreenY: 0
+  m_ScreenX: 0.5
+  m_ScreenY: 0.79999995
   m_CameraDistance: 10
   m_DeadZoneWidth: 0.04
   m_DeadZoneHeight: 0.04
@@ -7098,12 +7067,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7975006472075138237}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1940950899 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3580749847936892217, guid: 9c424ce4ecf3fa74a81e897ceecf750a,
-    type: 3}
-  m_PrefabInstance: {fileID: 2050750831}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1956242616
 GameObject:
   m_ObjectHideFlags: 0
@@ -7392,7 +7355,7 @@ PrefabInstance:
     - target: {fileID: 3580749847936892216, guid: 9c424ce4ecf3fa74a81e897ceecf750a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -14.698906
       objectReference: {fileID: 0}
     - target: {fileID: 3580749847936892216, guid: 9c424ce4ecf3fa74a81e897ceecf750a,
         type: 3}
@@ -7433,11 +7396,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 3_Sleeper_BlueLight2D
-      objectReference: {fileID: 0}
-    - target: {fileID: 3580749847936892217, guid: 9c424ce4ecf3fa74a81e897ceecf750a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c424ce4ecf3fa74a81e897ceecf750a, type: 3}
@@ -7898,13 +7856,13 @@ PrefabInstance:
     - target: {fileID: 1259838688767689900, guid: 8b5ddd618922d6542b6b6839de704b57,
         type: 3}
       propertyPath: activables.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1259838688767689900, guid: 8b5ddd618922d6542b6b6839de704b57,
         type: 3}
       propertyPath: activables.Array.data[0]
       value: 
-      objectReference: {fileID: 1940950899}
+      objectReference: {fileID: 1880459696}
     - target: {fileID: 1259838688767689901, guid: 8b5ddd618922d6542b6b6839de704b57,
         type: 3}
       propertyPath: moveGoal.y
@@ -31500,7 +31458,7 @@ PrefabInstance:
     - target: {fileID: 7975006473796216215, guid: dd91730998173d8439e8b381f87aab4e,
         type: 3}
       propertyPath: relativeGoal.x
-      value: -10.5
+      value: -8.5
       objectReference: {fileID: 0}
     - target: {fileID: 7975006473796216215, guid: dd91730998173d8439e8b381f87aab4e,
         type: 3}
@@ -31528,7 +31486,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 199719622, guid: cb18f7f018e571c4ab2ed8938848fd66, type: 3}
       propertyPath: relativeGoal.x
-      value: 10.5
+      value: 8.5
       objectReference: {fileID: 0}
     - target: {fileID: 199719622, guid: cb18f7f018e571c4ab2ed8938848fd66, type: 3}
       propertyPath: responders.Array.data[0]
