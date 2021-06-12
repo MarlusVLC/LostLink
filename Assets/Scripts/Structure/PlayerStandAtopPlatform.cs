@@ -30,7 +30,7 @@ public class PlayerStandAtopPlatform : MonoBehaviour
             Debug.Log("Hit the top: " + other.GetContact(0).normal);
             _originalParent = other.transform.parent;
             other.transform.SetParent(transform);
-            activables.Where(s => !s.activeSelf).ForEach(s => s.SetActive(true));
+            activables.Where(s => s && !s.activeSelf).ForEach(s => s.SetActive(true));
         }
     }
 
@@ -48,7 +48,7 @@ public class PlayerStandAtopPlatform : MonoBehaviour
             return;
         }
         other.transform.SetParent(_originalParent);
-        activables.Where(s =>  s.activeSelf).ForEach(s => s.SetActive(false));
+        activables.Where(s => s && !s.activeSelf).ForEach(s => s.SetActive(true));
 
     }
 }
