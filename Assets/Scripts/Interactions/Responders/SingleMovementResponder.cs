@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Aux_Classes
+namespace Responders
 {
     public class SingleMovementResponder : Responder
     {

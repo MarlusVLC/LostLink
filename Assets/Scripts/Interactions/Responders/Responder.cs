@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Aux_Classes
+namespace Responders
 {
     [DisallowMultipleComponent]
     public abstract class Responder : MonoBehaviour

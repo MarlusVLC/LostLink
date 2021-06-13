@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Aux_Classes;
+using Responders;
 using UnityEngine;
 
 namespace Interactions.Interactables

@@ -27,7 +27,7 @@ public class PlayerStandAtopPlatform : MonoBehaviour
         
         if (other.GetContact(0).normal.y < 0)
         {
-            Debug.Log("Hit the top: " + other.GetContact(0).normal);
+            // Debug.Log("Hit the top: " + other.GetContact(0).normal);
             _originalParent = other.transform.parent;
             other.transform.SetParent(transform);
             activables.Where(s => s && !s.activeSelf).ForEach(s => s.SetActive(true));

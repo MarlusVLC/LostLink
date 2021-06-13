@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using Unity.Mathematics;
 using UnityEngine;
 
-public class SinusoidalPlatformMovement : MonoBehaviour
+public class SinusoidalPlatformMovement : MonoCache
 {
     [SerializeField] private bool moveHorizontally;
     [SerializeField] private float periodX;
@@ -44,12 +45,13 @@ public class SinusoidalPlatformMovement : MonoBehaviour
 
     private Collider2D _collider;
 
-    void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         _midlineX = transform.position.x;
         _midlineY = transform.position.y;
     }
-    
+
 
     void FixedUpdate()
     {
@@ -63,7 +65,6 @@ public class SinusoidalPlatformMovement : MonoBehaviour
             ? amplitudeY * Mathf.Sin((2 * Mathf.PI / Mathf.Abs(periodY))*(_deltaY-shiftY)) + _midlineY
             : transform.position.y;
         
-
         transform.position = new Vector3(_x, _y, transform.position.z);
     }
 

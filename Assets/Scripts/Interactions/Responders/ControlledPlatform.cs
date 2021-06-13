@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections;
+using Aux_Classes;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Aux_Classes
+namespace Responders
 {
     
     [RequireComponent(typeof(PositionCheckingBox))]

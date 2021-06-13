@@ -52,7 +52,6 @@ namespace Interactions.Interactables
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-
             if (useMask)
             {
                 int otherMask = 1 << other.gameObject.layer;
@@ -68,6 +67,8 @@ namespace Interactions.Interactables
                 if (enablerPlayers.Contains(other.transform))
                     _keys++;
             }
+            // print("Current quantity of keys: " + _keys);
+
         }
         
         

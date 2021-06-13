@@ -1,7 +1,8 @@
 ﻿using System;
+using Aux_Classes;
 using UnityEngine;
 
-namespace Aux_Classes
+namespace Responders
 {
     public class CPlatformHelper : MonoBehaviour
     {
