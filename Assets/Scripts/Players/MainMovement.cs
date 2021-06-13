@@ -133,10 +133,10 @@ public class MainMovement : MonoBehaviour
         _jumpBuffer -= Time.deltaTime;
         if (Input.GetButtonDown("Jump"+controls))
         {
-            // _jumpBuffer = DEFAULT_jumpBuffer;
+            _jumpBuffer = DEFAULT_jumpBuffer;
         }
 
-        if (/*_jumpBuffer > 0*/ Input.GetButtonDown("Jump"+controls) && _canJump)
+        if (_jumpBuffer > 0 /*Input.GetButtonDown("Jump"+controls)*/ && _canJump)
         {
             // StartCoroutine(PrepareJump(new Vector2(_rb.velocity.x, jumpMoveRate),0.1f));
             _animator.SetTrigger(_animPrepareJump);

@@ -48,7 +48,7 @@ public class PlayerStandAtopPlatform : MonoBehaviour
             return;
         }
         other.transform.SetParent(_originalParent);
-        activables.Where(s => s && !s.activeSelf).ForEach(s => s.SetActive(true));
+        activables.Where(s => s && s.activeSelf).ForEach(s => s.SetActive(false));
 
     }
 }

@@ -62,7 +62,7 @@ public class SinusoidalPlatformMovement : MonoCache
         
         _deltaY = _deltaY >= periodY ? 0 : _deltaY + Time.deltaTime;
         _y = moveVertically
-            ? amplitudeY * Mathf.Sin((2 * Mathf.PI / Mathf.Abs(periodY))*(_deltaY-shiftY)) + _midlineY
+            ? amplitudeY * Mathf.Cos((2 * Mathf.PI / Mathf.Abs(periodY))*(_deltaY-shiftY)) + _midlineY
             : transform.position.y;
         
         transform.position = new Vector3(_x, _y, transform.position.z);
