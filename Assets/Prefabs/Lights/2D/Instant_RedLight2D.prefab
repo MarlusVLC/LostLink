@@ -28,7 +28,7 @@ PrefabInstance:
     - target: {fileID: 3292151086581263068, guid: cb18f7f018e571c4ab2ed8938848fd66,
         type: 3}
       propertyPath: m_Name
-      value: '1_Instant_RedLight2D '
+      value: Instant_RedLight2D
       objectReference: {fileID: 0}
     - target: {fileID: 3292151086581263069, guid: cb18f7f018e571c4ab2ed8938848fd66,
         type: 3}
@@ -53,22 +53,22 @@ PrefabInstance:
     - target: {fileID: 3292151086581263069, guid: cb18f7f018e571c4ab2ed8938848fd66,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99997944
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3292151086581263069, guid: cb18f7f018e571c4ab2ed8938848fd66,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3292151086581263069, guid: cb18f7f018e571c4ab2ed8938848fd66,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3292151086581263069, guid: cb18f7f018e571c4ab2ed8938848fd66,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00641083
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3292151086581263069, guid: cb18f7f018e571c4ab2ed8938848fd66,
         type: 3}

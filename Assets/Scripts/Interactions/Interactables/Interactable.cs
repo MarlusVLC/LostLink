@@ -22,7 +22,7 @@ namespace Interactions.Interactables
         
         protected void Interact()
         {
-            foreach (Responder responder in responders)
+            foreach (var responder in responders)
             {
                 responder.React();
             }
