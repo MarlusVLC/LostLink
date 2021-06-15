@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Linq;
+using Aux_Classes;
+using Interactions.Interactables;
 using Responders;
 using UnityEngine;
 
@@ -7,26 +10,15 @@ namespace SpecificEvents
     public class EnterTheHole : MonoBehaviour
     {
         [SerializeField] private string triggerTag;
-
-        private Animator _anim;
-        private int _enterHoleTrigger;
-
-
-        private void Awake()
-        {
-            _anim = GetComponent<Animator>();
-            _enterHoleTrigger = Animator.StringToHash("EnterTheHole");
-        }
-
-
+        [SerializeField] private GameObject[] blockedWindEffectors;
+        
         private void OnTriggerEnter2D(Collider2D other)
         {
-            // print("EnteredTrigger");
             if (other.gameObject.CompareTag(triggerTag))
             {
-                // print("EnteredHole");
                 Destroy(GetComponent<ControlledPlatform>());
-                // _anim.SetTrigger(_enterHoleTrigger);
+                blockedWindEffectors.Where(s => s && !s.activeSelf).ForEach(s => s.SetActive(true));
+                Destroy(other.gameObject);
             }
         }
     }
