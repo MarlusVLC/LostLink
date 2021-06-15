@@ -18,25 +18,15 @@ namespace SpecificEvents
             _enterHoleTrigger = Animator.StringToHash("EnterTheHole");
         }
 
-        // private void OnCollisionEnter2D(Collision2D other)
-        // {
-        //     print("EnteredCollision");
-        //     if (other.gameObject.CompareTag(triggerTag))
-        //     {
-        //         print("EnteredHole");
-        //         Destroy(GetComponent<ControlledPlatform>());
-        //         _anim.SetTrigger(_enterHoleTrigger);
-        //     }
-        // }
-        
+
         private void OnTriggerEnter2D(Collider2D other)
         {
-            print("EnteredTrigger");
+            // print("EnteredTrigger");
             if (other.gameObject.CompareTag(triggerTag))
             {
-                print("EnteredHole");
+                // print("EnteredHole");
                 Destroy(GetComponent<ControlledPlatform>());
-                _anim.SetTrigger(_enterHoleTrigger);
+                // _anim.SetTrigger(_enterHoleTrigger);
             }
         }
     }
