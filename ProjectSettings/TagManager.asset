@@ -52,14 +52,17 @@ TagManager:
   - name: Background
     uniqueID: 3452692875
     locked: 0
+  - name: BackStructure
+    uniqueID: 371741633
+    locked: 0
   - name: Character
     uniqueID: 2456764831
     locked: 0
-  - name: Foreground
-    uniqueID: 1317355999
-    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Foreground
+    uniqueID: 1317355999
     locked: 0
   - name: My Sprites
     uniqueID: 3961200907
