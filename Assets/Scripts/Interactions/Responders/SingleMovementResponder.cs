@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Aux_Classes
+namespace Responders
 {
     public class SingleMovementResponder : Responder
     {
@@ -16,6 +16,7 @@ namespace Aux_Classes
         
 
         private Vector2 _initialPos;
+        
         private bool _canReturn;
         private bool _isInterpolating;
 
@@ -30,22 +31,24 @@ namespace Aux_Classes
         {
             if (!_isInterpolating)
             {
-                StartCoroutine(InterpolatingMovement(_canReturn ? -moveGoal : moveGoal, lerpTime));
+                StartCoroutine(useRelativeGoal
+                    ? InterpolatingMovement(_canReturn ? -moveGoal : moveGoal, lerpTime)
+                    : InterpolatingMovement(_canReturn ? _initialPos : moveGoal, lerpTime));
             }
         }
-        
+
 
 
         private IEnumerator InterpolatingMovement(Vector2 endPos, float lerpTime)
         {
             _isInterpolating = true;
             
-            Vector2 startPos = transform.position;
+            _initialPos = transform.position;
             var timer = 0.0f;
             float t;
-            print("POSICAO: " + startPos);
+            // print("POSICAO: " + startPos);
             if (useRelativeGoal)
-                endPos = startPos + endPos;
+                endPos = _initialPos + endPos;
             endPos.x = ignoreX ? transform.position.x : endPos.x;
             endPos.y = ignoreY ? transform.position.y : endPos.y;
             print("ENDPOS: " + endPos);
@@ -66,7 +69,7 @@ namespace Aux_Classes
                     t = t * t * (3f - 2f * t);
 
                 }
-                transform.position = Vector2.Lerp(startPos, endPos, t);
+                transform.position = Vector2.Lerp(_initialPos, endPos, t);
                 yield return null;
             }
             transform.position = endPos;

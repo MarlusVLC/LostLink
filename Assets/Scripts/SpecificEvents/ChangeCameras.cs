@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Aux_Classes;
-using Cinemachine;
-using UnityEditor.U2D.Path;
 using UnityEngine;
 
 namespace SpecificEvents
