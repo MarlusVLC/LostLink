@@ -27,7 +27,6 @@ public class PlayerStandAtopPlatform : MonoBehaviour
         {
             OriginalSizeBoxY = _checkingBox.CollisionDetectorSize.y;
             OriginalOffsetBoxY = _checkingBox.CollisionDetectorOffset.y;
-
         }
         
     }
@@ -41,14 +40,16 @@ public class PlayerStandAtopPlatform : MonoBehaviour
         
         if (other.GetContact(0).normal.y < 0)
         {
-            // Debug.Log("Hit the top: " + other.GetContact(0).normal);
             _originalParent = other.transform.parent;
             other.transform.SetParent(transform);
             hasPlayerAtop = true;
-            _checkingBoxOriginalData = _checkingBox.AdaptToAboveEntity(
+            if (_checkingBox)
+            {
+                _checkingBoxOriginalData = _checkingBox.AdaptToAboveEntity(
                     _checkingBox.CollisionDetectorSize.x, 7,
                     _checkingBox.CollisionDetectorOffset.x, 2);
                 activables.Where(s => s && !s.activeSelf).ForEach(s => s.SetActive(true));
+            }
         }
     }
 
@@ -71,13 +72,13 @@ public class PlayerStandAtopPlatform : MonoBehaviour
         }
         other.transform.SetParent(_originalParent);
         activables.Where(s => s && s.activeSelf).ForEach(s => s.SetActive(false));
-        hasPlayerAtop = false;
-        if (_checkingBox != null)
+        if (_checkingBox && hasPlayerAtop)
         {
             _checkingBox.AdaptToAboveEntity(
                 _checkingBox.CollisionDetectorSize.x,  _checkingBoxOriginalData.Item1.y,
                 _checkingBox.CollisionDetectorOffset.x, _checkingBoxOriginalData.Item2.y); 
             print(_checkingBox.CollisionDetectorSize);
+            hasPlayerAtop = false;
         }
     }
     

@@ -8,7 +8,7 @@ namespace Responders
         protected override void Awake()
         {
             base.Awake();
-            print("persist");
+            // print("persist");
             DontDestroyOnLoad(this.gameObject);
         }
     }
