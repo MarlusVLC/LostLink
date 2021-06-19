@@ -42,6 +42,7 @@ public class MainMovement : MonoBehaviour
     private MoveState _moveState;
     private float _coyoteTime;
     private float _jumpBuffer;
+    private float _idleTime;
     private int _numberOfJumps;
     private bool _canJump;
     private bool _areMovementsDamped;
@@ -49,6 +50,7 @@ public class MainMovement : MonoBehaviour
     private int _animVertSpeed = Animator.StringToHash("VerticalSpeed");
     private int _animHorSpeed = Animator.StringToHash("HorizontalSpeed");
     private int _animPrepareJump = Animator.StringToHash("PrepareJump");
+    private int _animIdleTime = Animator.StringToHash("IdleTime");
     
     
     
@@ -84,6 +86,8 @@ public class MainMovement : MonoBehaviour
         {
             Die();
         }
+        
+        IdleTimer();
         
         
         #region Jump Process
@@ -200,6 +204,20 @@ public class MainMovement : MonoBehaviour
         transform.position = respawnState.Position;
         _rb.rotation = respawnState.Rotation;
         _rb.velocity = respawnState.Velocity;
+    }
+
+    private void IdleTimer()
+    {
+        _animator.SetFloat(_animIdleTime, _idleTime);
+
+        if (_rb.velocity.magnitude > 0.1)
+        {
+            _idleTime = 0f;
+        }
+        else
+        {
+            _idleTime += Time.deltaTime;
+        }
     }
 
     private IEnumerator PrepareJump(Vector2 jumpRate, float preparationTime)

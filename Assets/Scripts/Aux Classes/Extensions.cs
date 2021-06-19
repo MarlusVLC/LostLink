@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -36,6 +37,7 @@ namespace Aux_Classes
             
             return new Tuple<Vector2, Vector2>(originalSize, originalOffset);
         }
+        
         
         
     }

@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_DissolveShader2D Gradient
-  m_Shader: {fileID: -6465566751694194690, guid: fff773a3c519dff4995a630d726fed0b,
+  m_Name: Shader Graphs_DissolverShader2D_Animated_Brackeys
+  m_Shader: {fileID: -6465566751694194690, guid: 5f2bfd3320a9cd046bc4cad618104cef,
     type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
@@ -20,20 +20,9 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Texture2D_1DEF16CB:
-        m_Texture: {fileID: 2800000, guid: d8911ecf3fa0c48498add4c2e750be8d, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Boolean_4459B061: 0
-    - DissolveAmount: 0
-    - Vector1_6E1B64C2: 5
-    - Vector1_8A4043BD: 0.5
-    - Vector1_EAD4876E: 0
-    m_Colors:
-    - Color_3C6315B2: {r: 1, g: 1, b: 1, a: 1}
-    - Color_ED4B0DE8: {r: 0, g: 120.62829, b: 45.757946, a: 1}
+    m_Floats: []
+    m_Colors: []
