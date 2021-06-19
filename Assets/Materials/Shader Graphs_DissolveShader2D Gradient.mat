@@ -32,7 +32,7 @@ Material:
     - Boolean_4459B061: 0
     - DissolveAmount: 0
     - Vector1_6E1B64C2: 5
-    - Vector1_8A4043BD: 0.5
+    - Vector1_8A4043BD: 0
     - Vector1_EAD4876E: 0
     m_Colors:
     - Color_3C6315B2: {r: 1, g: 1, b: 1, a: 1}

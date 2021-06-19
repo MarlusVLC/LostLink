@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5656c5e200a31c945b469abda4211525, type: 3}
+  m_Name: RandomStars
+  m_EditorClassIdentifier: 
+  Tileset: {fileID: 11400000, guid: b457481e210517c46a745227abf92432, type: 2}
+  Params:
+    m_paramList: []
+  m_group: 0
+  m_autotilingMode: 1
+  m_showInPalette: 1
+  RandomTiles: 
+  RandomTileList:
+  - tileData: 131139
+    probabilityFactor: 1
+  - tileData: 131238
+    probabilityFactor: 1
+  - tileData: 205
+    probabilityFactor: 1
+  - tileData: 206
+    probabilityFactor: 1
+  - tileData: 207
+    probabilityFactor: 1
+  - tileData: 183
+    probabilityFactor: 1
+  - tileData: 184
+    probabilityFactor: 1
+  - tileData: 185
+    probabilityFactor: 1
+  - tileData: 186
+    probabilityFactor: 1
+  - tileData: 187
+    probabilityFactor: 1
+  - tileData: 163
+    probabilityFactor: 1
+  - tileData: 164
+    probabilityFactor: 1
+  - tileData: 165
+    probabilityFactor: 1
+  - tileData: 166
+    probabilityFactor: 1
+  - tileData: 167
+    probabilityFactor: 1
+  - tileData: 143
+    probabilityFactor: 1
+  - tileData: 144
+    probabilityFactor: 1
+  - tileData: 145
+    probabilityFactor: 1
+  - tileData: 146
+    probabilityFactor: 1
+  - tileData: 147
+    probabilityFactor: 1
+  - tileData: 123
+    probabilityFactor: 1
+  - tileData: 124
+    probabilityFactor: 1
+  - tileData: 125
+    probabilityFactor: 1
+  - tileData: 126
+    probabilityFactor: 1
+  - tileData: 127
+    probabilityFactor: 1
+  - tileData: 103
+    probabilityFactor: 1
+  - tileData: 104
+    probabilityFactor: 1
+  - tileData: 105
+    probabilityFactor: 1
+  - tileData: 106
+    probabilityFactor: 1
+  - tileData: 107
+    probabilityFactor: 1
+  - tileData: 83
+    probabilityFactor: 1
+  - tileData: 84
+    probabilityFactor: 1
+  - tileData: 85
+    probabilityFactor: 1
+  - tileData: 86
+    probabilityFactor: 1
+  - tileData: 87
+    probabilityFactor: 1
+  RandomizeFlagMask: 3758096384
+  RemoveBrushIdAfterRefresh: 1

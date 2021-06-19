@@ -34,6 +34,8 @@ MonoBehaviour:
     BrushAsset: {fileID: 11400000, guid: 418fb7f34e5ede14a8f1a00c225815ce, type: 2}
   - Id: 3
     BrushAsset: {fileID: 11400000, guid: a43bd195d08dccd4184e6a3b3199c061, type: 2}
+  - Id: 4
+    BrushAsset: {fileID: 11400000, guid: c0222abe79e8d5e408b0adc9db98e9a3, type: 2}
   m_tiles:
   - uv:
       serializedVersion: 2
