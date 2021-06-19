@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Responders
+namespace Aux_Classes
 {
     public class UpslidingDoor : Responder
     {

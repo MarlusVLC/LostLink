@@ -28,9 +28,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1259838688767689889}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 27.5, y: -5, z: -1.7706251}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6654296, y: 0.6654296, z: 0.6654296}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -123,10 +123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b7a42db2dafc0d45ae999204db5ed1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveGoal: {x: 0, y: 7}
+  moveGoal: {x: 27.5, y: 7}
   useRelativeGoal: 0
-  ignoreX: 1
-  ignoreY: 0
   lerpTime: 1
   isLinear: 0
 --- !u!114 &1259838688767689900
@@ -144,7 +142,6 @@ MonoBehaviour:
   attachableLayer:
     serializedVersion: 2
     m_Bits: 786432
-  activables: []
 --- !u!114 &6992464488768969660
 MonoBehaviour:
   m_ObjectHideFlags: 0

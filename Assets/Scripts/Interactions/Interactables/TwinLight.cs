@@ -47,7 +47,6 @@ namespace Interactions.Interactables
 
         public void Cease()
         {
-            Interact();
             _anim.SetTrigger("Defunct");
         }
     }

@@ -56,6 +56,7 @@ namespace Interactions.Interactables
 
         private void OnTriggerEnter2D(Collider2D other)
         {
+
             if (useMask)
             {
                 int otherMask = 1 << other.gameObject.layer;

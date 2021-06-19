@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections;
-using Aux_Classes;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Responders
+namespace Aux_Classes
 {
     
     [RequireComponent(typeof(PositionCheckingBox))]
@@ -62,7 +61,6 @@ namespace Responders
         
         private IEnumerator MoveTowards(float _timeLimit)
         {
-            _isMoving = true;
             float _timer = 0;
             while (_timer < _timeLimit)
             {
@@ -70,7 +68,6 @@ namespace Responders
                 
                 if (CannotMoveTowardsDirection())
                 {
-                    _isMoving = false;
                     yield break;
                 }
         
@@ -79,7 +76,6 @@ namespace Responders
                 transform.position = (_initialPos) + goalDist * _timer / timeLimit;
                 yield return null;
             }
-            _isMoving = false;
         }
         
         private IEnumerator MoveTowards()
@@ -120,8 +116,5 @@ namespace Responders
                 (goalDist.x < 0 && _checkingBox.ColliderDetectors[3])
             );
         }
-        
-        
-        
     }
 }

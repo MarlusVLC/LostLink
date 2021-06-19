@@ -27,7 +27,7 @@ public class MainMovement : MonoBehaviour
     [SerializeField] private float horizontalMoveRate;
     [SerializeField] private float jumpMoveRate;
     [SerializeField] private float deathHeight = -10; //TALVEZ TENHA QUE MUDAR DEPOIS
-    [SerializeField] private float DEFAULT_coyoteTime;
+    // [SerializeField] private float DEFAULT_coyoteTime;
     [Space(10)]
     [Range(0,1)][SerializeField] private float DEFAULT_jumpBuffer;
     [Range(0,1)][SerializeField] private float hDampingBasic;
@@ -85,46 +85,6 @@ public class MainMovement : MonoBehaviour
             Die();
         }
         
-        
-        #region Jump Process
-
-        _canJump =  Physics2D.OverlapBox((Vector2)transform.position + groundCheckBoxPos, groundCheckBoxSize, 0,
-            groundLayer) || _coyoteTime > 0;
-
-
-        _jumpBuffer -= Time.deltaTime;
-        if (Input.GetButtonDown("Jump"+controls))
-        {
-            _jumpBuffer = DEFAULT_jumpBuffer;
-        }
-
-        if (_jumpBuffer > 0 /*Input.GetButtonDown("Jump"+controls)*/ && _canJump)
-        {
-            // StartCoroutine(PrepareJump(new Vector2(_rb.velocity.x, jumpMoveRate),0.1f));
-            _animator.SetTrigger(_animPrepareJump);
-            _rb.velocity = new Vector2(_rb.velocity.x, jumpMoveRate);
-            _coyoteTime = 0;
-        }
-        
-        
-        if (Input.GetButtonUp("Jump"+controls))
-        {
-            if (_rb.velocity.y > jumpMoveRate * jumpCut)
-            {
-                _rb.velocity = new Vector2(_rb.velocity.x, jumpMoveRate * jumpCut);
-            }
-        }
-        
-        _animator.SetFloat(_animVertSpeed, _rb.velocity.y);
-
-        // if (!_canJump && Input.GetButtonDown("Jump" + controls))
-        // {
-        //     FreeFall();
-        // }
-
-        #endregion
-
-        
 
 
         #region Horizontal Movement
@@ -164,16 +124,50 @@ public class MainMovement : MonoBehaviour
 
 
 
+        #region Jump Process
+
+        _canJump =  Physics2D.OverlapBox((Vector2)transform.position + groundCheckBoxPos, groundCheckBoxSize, 0,
+            groundLayer) || _coyoteTime > 0;
+
+
+        _jumpBuffer -= Time.deltaTime;
+        if (Input.GetButtonDown("Jump"+controls))
+        {
+            // _jumpBuffer = DEFAULT_jumpBuffer;
+        }
+
+        if (/*_jumpBuffer > 0*/ Input.GetButtonDown("Jump"+controls) && _canJump)
+        {
+            // StartCoroutine(PrepareJump(new Vector2(_rb.velocity.x, jumpMoveRate),0.1f));
+            _animator.SetTrigger(_animPrepareJump);
+            _rb.velocity = new Vector2(_rb.velocity.x, jumpMoveRate);
+            _coyoteTime = 0;
+        }
+        
+        
+        if (Input.GetButtonUp("Jump"+controls))
+        {
+            if (_rb.velocity.y > jumpMoveRate * jumpCut)
+            {
+                _rb.velocity = new Vector2(_rb.velocity.x, jumpMoveRate * jumpCut);
+            }
+        }
+        
+        _animator.SetFloat(_animVertSpeed, _rb.velocity.y);
+
+        // if (!_canJump && Input.GetButtonDown("Jump" + controls))
+        // {
+        //     FreeFall();
+        // }
+
+        #endregion
         
     }
-
-
-    private void OnCollisionExit2D(Collision2D other)
-    {
-        _coyoteTime = DEFAULT_coyoteTime;
-    }
-
-
+    
+    
+    
+    
+    
     private void OnDrawGizmos()
     {
         if (Application.isEditor)

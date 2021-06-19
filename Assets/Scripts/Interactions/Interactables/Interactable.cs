@@ -2,17 +2,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using Aux_Classes;
-using Responders;
 using UnityEngine;
 
 namespace Interactions.Interactables
 {
     public abstract class Interactable : MonoBehaviour
     {
-        [field: SerializeField] public bool HasContinuousInteraction { get; protected set; }
-        [SerializeField] protected Responder[] responders;
+        [SerializeField] protected Responder[] _responders;
         
-
+        
         private void OnValidate()
         {
             MakeFullyInteractable(LayerMask.NameToLayer("Interactable"));
@@ -22,7 +20,7 @@ namespace Interactions.Interactables
         
         protected void Interact()
         {
-            foreach (var responder in responders)
+            foreach (Responder responder in _responders)
             {
                 responder.React();
             }
@@ -30,7 +28,7 @@ namespace Interactions.Interactables
         
         protected void Interact(Vector2 messageCoordinates)
         {
-            foreach (var responder in responders)
+            foreach (Responder responder in _responders)
             {
                 responder.React(messageCoordinates);
             }

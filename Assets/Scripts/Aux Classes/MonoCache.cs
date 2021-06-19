@@ -6,6 +6,8 @@ namespace DefaultNamespace
 {
     public class MonoCache : MonoBehaviour
     {
+        [SerializeField] private bool UpdateTransformOnEditor;
+
         private Transform _transform;
         public Transform Transform => _transform;
 
@@ -21,7 +23,7 @@ namespace DefaultNamespace
 
         protected virtual void OnValidate()
         {
-            if (!_transform)
+            if (UpdateTransformOnEditor)
                 CacheTransform();
         }
 

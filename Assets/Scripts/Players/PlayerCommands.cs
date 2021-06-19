@@ -7,6 +7,7 @@ public class PlayerCommands : MonoBehaviour
     [SerializeField] private Vector2 detectorBoxSize;
     
     private Collider2D _detectedCollider;
+
     private Interactable _interactable;
     void Awake()
     {
@@ -39,23 +40,11 @@ public class PlayerCommands : MonoBehaviour
 
     private void ActUpon(Interactable interactable)
     {
-        if (interactable.HasContinuousInteraction)
+        if (Input.GetButton("Interact" + controls))
         {
-            if (Input.GetButton("Interact" + controls))
-            {
-                interactable.Trigger();
-            }
+            interactable.Trigger();
         }
-        else
-        {
-            if (Input.GetButtonDown("Interact" + controls))
-            {
-                interactable.Trigger();
-            }
-        }
-
     }
-    
 
     private void OnDrawGizmos()
     {

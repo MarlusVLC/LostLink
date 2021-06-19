@@ -4,8 +4,7 @@ namespace Aux_Classes
 {
     public class PositionCheckingBox : MonoBehaviour
     {
-
-
+        
         [Space] [Header("Collision/Space related parameters")]
         [SerializeField] private Vector2 collisionDetectorSize;
         [SerializeField] private Vector2 collisionDetectorOffset;
@@ -22,7 +21,9 @@ namespace Aux_Classes
             if (Application.isEditor)
             {
                 UpdateDetectorSettings();
+
                 CheckDetectorsStatus();
+    
             }
 
             for (int i = 0; i < ColliderDetectors.Length; i++)
@@ -30,6 +31,8 @@ namespace Aux_Classes
                 Gizmos.color = ColliderDetectors[i] ? Color.red : Color.blue;
                 Gizmos.DrawWireCube(DetectorCenters[i], DetectorSizes[i]);
             }
+            
+            
         }
 
 
@@ -73,26 +76,6 @@ namespace Aux_Classes
                 ColliderDetectors[i] = Physics2D.OverlapBox(DetectorCenters[i], DetectorSizes[i],
                     0, detectableLayers);
             }
-        }
-        
-        
-        
-        public Vector2 CollisionDetectorSize
-        {
-            get => collisionDetectorSize;
-            set => collisionDetectorSize = value;
-        }
-
-        public Vector2 CollisionDetectorOffset
-        {
-            get => collisionDetectorOffset;
-            set => collisionDetectorOffset = value;
-        }
-
-        public Vector2 CollisionDetectorBorderThickness
-        {
-            get => collisionDetectorBorderThickness;
-            set => collisionDetectorBorderThickness = value;
         }
         
         
