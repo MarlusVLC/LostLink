@@ -67,6 +67,7 @@ namespace Responders
             while (_timer < _timeLimit)
             {
                 _checkingBox.UpdateDetectorSettings();
+                _checkingBox.CheckDetectorsStatus();
                 
                 if (CannotMoveTowardsDirection())
                 {
@@ -88,8 +89,6 @@ namespace Responders
             
             Vector2 currPos = transform.position;
 
-
-            
             while (currPos != _target)
             {
 
