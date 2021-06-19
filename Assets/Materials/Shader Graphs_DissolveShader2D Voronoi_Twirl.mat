@@ -7,8 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: gfx_headlights
-  m_Shader: {fileID: 4800000, guid: 8f8b48660dacfbf4fb273a0cc7db3a0d, type: 3}
+  m_Name: Shader Graphs_DissolveShader2D Voronoi_Twirl
+  m_Shader: {fileID: -6465566751694194690, guid: daf412e56fa8c5a4cad01308debe7df5,
+    type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -19,9 +20,16 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 5a595a2d861adc14a8244c0cc0de960a, type: 3}
+    - Texture2D_1DEF16CB:
+        m_Texture: {fileID: 2800000, guid: d8911ecf3fa0c48498add4c2e750be8d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors: []
+    m_Floats:
+    - Vector1_4F29A898: 0
+    - Vector1_5F5D2CC6: 65
+    - Vector1_6E1B64C2: 0.69
+    - Vector1_8A4043BD: 0.4
+    - Vector1_EAD4876E: 0.44
+    m_Colors:
+    - Color_3C6315B2: {r: 1, g: 1, b: 1, a: 1}
+    - Color_ED4B0DE8: {r: 1, g: 1, b: 1, a: 1}
