@@ -100,6 +100,26 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.29411766
       objectReference: {fileID: 0}
+    - target: {fileID: 7809045069383359943, guid: cb18f7f018e571c4ab2ed8938848fd66,
+        type: 3}
+      propertyPath: RED_lightSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: d394fdfa5d490c140bfc7a06ec0fe0c2, type: 3}
+    - target: {fileID: 7809045069383359943, guid: cb18f7f018e571c4ab2ed8938848fd66,
+        type: 3}
+      propertyPath: playRedSound
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7809045069383359943, guid: cb18f7f018e571c4ab2ed8938848fd66,
+        type: 3}
+      propertyPath: playBlueSound
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7809045069383359943, guid: cb18f7f018e571c4ab2ed8938848fd66,
+        type: 3}
+      propertyPath: RED_light_activateSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: c7981fb7b22fbca479c5bfd40d91995a, type: 3}
     - target: {fileID: 8043908292755677447, guid: cb18f7f018e571c4ab2ed8938848fd66,
         type: 3}
       propertyPath: m_Controller

@@ -394,8 +394,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75716ac7601e186458f1fc7ae700bf45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  capa_impacto_grande_finalSFX: {fileID: 0}
-  capa_transicaoSFX: {fileID: 0}
+  capa_impacto_grande_finalSFX: {fileID: 8300000, guid: 86c825964f9fba546bf4d57c5057c01b,
+    type: 3}
+  capa_transicaoSFX: {fileID: 8300000, guid: 284f0c654e6bf06419b3ea23f0e1c49d, type: 3}
+  jump: {fileID: 8300000, guid: 464e66bc32bc8db4a8acdee946abc24d, type: 3}
   sliding_doorSFX: {fileID: 0}
-  lightSFX: {fileID: 0}
-  light_activateSFX: {fileID: 0}
+  playBlueSound: 0
+  BLUE_lightSFX: {fileID: 0}
+  BLUE_light_activateSFX: {fileID: 0}
+  playRedSound: 0
+  RED_lightSFX: {fileID: 0}
+  RED_light_activateSFX: {fileID: 0}
+  teleportSFX: {fileID: 0}
+  windSFX: {fileID: 0}
+  templeAmbient: {fileID: 0}
+  natureAmbient: {fileID: 0}

@@ -21,7 +21,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 262144
   useMask: 1
-  destroyOnExit: 0
+  destroyOnExit: 1
 --- !u!1001 &3228281952716720270
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34,6 +34,11 @@ PrefabInstance:
       propertyPath: lightSFX
       value: 
       objectReference: {fileID: 8300000, guid: d394fdfa5d490c140bfc7a06ec0fe0c2, type: 3}
+    - target: {fileID: 2953956396775237294, guid: ca6f1d4d34bae674bbfd4baeecb8405f,
+        type: 3}
+      propertyPath: playBlueSound
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2953956396775237294, guid: ca6f1d4d34bae674bbfd4baeecb8405f,
         type: 3}
       propertyPath: light_activateSFX

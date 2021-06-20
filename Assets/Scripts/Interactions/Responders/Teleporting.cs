@@ -36,7 +36,7 @@ namespace Responders
             Array.ForEach(players, DisableMovement);
             yield return new WaitForSeconds(time);
             StartCoroutine(InterpolateShader(_dissolvingMaterial, 0, 1, 4));
-            _audioLib.TeleportSFX();
+            // _audioLib.TeleportSFX();
             yield return new WaitForSeconds(4.1f);
             DestroyPlayers();
             SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex + 1)%SceneManager.sceneCountInBuildSettings);

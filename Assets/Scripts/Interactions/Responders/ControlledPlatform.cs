@@ -81,6 +81,7 @@ namespace Responders
                 yield return null;
             }
             _isMoving = false;
+
         }
         
         private IEnumerator MoveTowards()

@@ -66,7 +66,10 @@ namespace Interactions.Interactables
                 if ((otherMask | enablerLayer) == enablerLayer)
                 {
                     _keys++;
-                    _audioLib.LightSFX();
+                    if (_audioLib)
+                    {
+                        _audioLib.LightSFX();
+                    }
                 }
             }
             
@@ -74,7 +77,10 @@ namespace Interactions.Interactables
             {
                 if (enablerPlayers.Contains(other.transform))
                 {
-                    _audioLib.LightSFX();
+                    if (_audioLib)
+                    {
+                        _audioLib.LightSFX();
+                    }
                     _keys++;
 
                 }
@@ -107,7 +113,10 @@ namespace Interactions.Interactables
                 if ((otherMask | enablerLayer) == enablerLayer)
                 {
                     _keys--;
-                    StartCoroutine(_audioLib.StopLightSFX());
+                    if (_audioLib)
+                    {
+                        StartCoroutine(_audioLib.StopLightSFX());                        
+                    }
                 }
             }
 
@@ -116,7 +125,10 @@ namespace Interactions.Interactables
                 if (enablerPlayers.Contains(other.transform))
                 {
                     _keys--;
-                    StartCoroutine(_audioLib.StopLightSFX());
+                    if (_audioLib)
+                    {
+                        StartCoroutine(_audioLib.StopLightSFX());                        
+                    }
                 }
             }
         }

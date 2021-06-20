@@ -18,9 +18,9 @@ GameObject:
   - component: {fileID: 114415300062348390}
   - component: {fileID: 114415300062348395}
   - component: {fileID: 626451557}
-  - component: {fileID: 626451555}
   - component: {fileID: 626451556}
   - component: {fileID: 626451566}
+  - component: {fileID: 6918299920106730563}
   m_Layer: 18
   m_Name: RedOne
   m_TagString: Untagged
@@ -116,6 +116,7 @@ MonoBehaviour:
   horizontalMoveRate: 3
   jumpMoveRate: 40
   deathHeight: -20
+  DEFAULT_coyoteTime: 0
   DEFAULT_jumpBuffer: 0.2
   hDampingBasic: 0.56
   hDampingStop: 0.5
@@ -326,21 +327,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &626451555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 114415300062348412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86bfce93f0435ed46b09dfc53ef58d4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  capa_impacto_grande_final: {fileID: 8300000, guid: ea731f6212daace4a87fddbe20f71715,
-    type: 3}
-  capa_transicao: {fileID: 8300000, guid: e1a7ee6fc67f3374ba8d407d7deb4ce7, type: 3}
 --- !u!114 &626451556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,3 +383,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   godSpeed: 5
+--- !u!114 &6918299920106730563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114415300062348412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75716ac7601e186458f1fc7ae700bf45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  capa_impacto_grande_finalSFX: {fileID: 8300000, guid: 86c825964f9fba546bf4d57c5057c01b,
+    type: 3}
+  capa_transicaoSFX: {fileID: 8300000, guid: 284f0c654e6bf06419b3ea23f0e1c49d, type: 3}
+  jump: {fileID: 8300000, guid: 120f08cfa44f72247ace81327b123e09, type: 3}
+  sliding_doorSFX: {fileID: 0}
+  playBlueSound: 0
+  BLUE_lightSFX: {fileID: 0}
+  BLUE_light_activateSFX: {fileID: 0}
+  playRedSound: 0
+  RED_lightSFX: {fileID: 0}
+  RED_light_activateSFX: {fileID: 0}
+  teleportSFX: {fileID: 0}
+  windSFX: {fileID: 0}
+  templeAmbient: {fileID: 0}
+  natureAmbient: {fileID: 0}

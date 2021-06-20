@@ -77,7 +77,6 @@ public class PlayerStandAtopPlatform : MonoBehaviour
             _checkingBox.AdaptToAboveEntity(
                 _checkingBox.CollisionDetectorSize.x,  _checkingBoxOriginalData.Item1.y,
                 _checkingBox.CollisionDetectorOffset.x, _checkingBoxOriginalData.Item2.y); 
-            print(_checkingBox.CollisionDetectorSize);
             hasPlayerAtop = false;
         }
     }

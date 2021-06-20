@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 6462742081879842743}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.1144648, y: 0.3778347, z: -51.91797}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children:
   - {fileID: 6462742083016865061}
   - {fileID: 6462742082045784352}
@@ -63,8 +63,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6462742082045784353}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.884464, y: -1.5799999, z: 52.5}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalPosition: {x: -15.49, y: 19, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6462742081879842742}
   m_RootOrder: 1
@@ -107,7 +107,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -40
   m_Sprite: {fileID: 21300000, guid: 1c46665a5d0c50d4ea2ad065a9a9e072, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -144,7 +144,7 @@ MonoBehaviour:
   - {x: -1.4999988, y: 1.7600001, z: 0}
   m_ShapePathHash: 1626377053
   m_Mesh: {fileID: 0}
-  m_InstanceId: -16926
+  m_InstanceId: -82906
 --- !u!61 &6462742082045784380
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -158,7 +158,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.10262096, y: -0.8893564}
+  m_Offset: {x: 0.10262096, y: -1.2724321}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -169,7 +169,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.2068107, y: 5.464451}
+  m_Size: {x: 3.2068107, y: 6.230602}
   m_EdgeRadius: 0
 --- !u!114 &6462742082045784383
 MonoBehaviour:
@@ -183,12 +183,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b7a42db2dafc0d45ae999204db5ed1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveGoal: {x: 0, y: 4.8}
+  moveGoal: {x: 0, y: 4}
   useRelativeGoal: 1
-  ignoreX: 0
+  ignoreX: 1
   ignoreY: 0
   lerpTime: 1.5
   isLinear: 0
+  playSound: 1
 --- !u!82 &2082209981
 AudioSource:
   m_ObjectHideFlags: 0
@@ -301,8 +302,16 @@ MonoBehaviour:
   capa_transicaoSFX: {fileID: 0}
   jump: {fileID: 0}
   sliding_doorSFX: {fileID: 8300000, guid: 1aa34e4fd03a9d34f98f8aa0c34862b2, type: 3}
-  lightSFX: {fileID: 0}
-  light_activateSFX: {fileID: 0}
+  playBlueSound: 0
+  BLUE_lightSFX: {fileID: 0}
+  BLUE_light_activateSFX: {fileID: 0}
+  playRedSound: 0
+  RED_lightSFX: {fileID: 0}
+  RED_light_activateSFX: {fileID: 0}
+  teleportSFX: {fileID: 0}
+  windSFX: {fileID: 0}
+  templeAmbient: {fileID: 0}
+  natureAmbient: {fileID: 0}
 --- !u!1 &6462742082253208297
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,8 +338,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6462742082253208297}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.67, y: 1.6100001, z: 54.537968}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: -15.28, y: 21.21, z: 54.537968}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6462742081879842742}
   m_RootOrder: 2
@@ -437,8 +446,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6462742083016865066}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.669998, y: 5.62, z: 54.537968}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: -15.279994, y: 23.030003, z: 54.537968}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6462742081879842742}
   m_RootOrder: 0

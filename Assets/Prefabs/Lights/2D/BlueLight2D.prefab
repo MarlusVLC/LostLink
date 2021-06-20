@@ -186,6 +186,31 @@ PrefabInstance:
       propertyPath: m_RenderingLayerMask
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8202607390586894102, guid: 77ac880779af81f43871afa6b8de8840,
+        type: 3}
+      propertyPath: lightSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 240f261a68478a740bc9944f2acbb0ba, type: 3}
+    - target: {fileID: 8202607390586894102, guid: 77ac880779af81f43871afa6b8de8840,
+        type: 3}
+      propertyPath: BLUE_lightSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 240f261a68478a740bc9944f2acbb0ba, type: 3}
+    - target: {fileID: 8202607390586894102, guid: 77ac880779af81f43871afa6b8de8840,
+        type: 3}
+      propertyPath: playBlueSound
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8202607390586894102, guid: 77ac880779af81f43871afa6b8de8840,
+        type: 3}
+      propertyPath: light_activateSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: a0d7397fa3f5eae40b161f16226c208a, type: 3}
+    - target: {fileID: 8202607390586894102, guid: 77ac880779af81f43871afa6b8de8840,
+        type: 3}
+      propertyPath: BLUE_light_activateSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: a0d7397fa3f5eae40b161f16226c208a, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77ac880779af81f43871afa6b8de8840, type: 3}
 --- !u!1 &4760764407061035309 stripped

@@ -40,6 +40,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: NightSky
+    uniqueID: 2828629275
+    locked: 0
   - name: InsideTemple
     uniqueID: 309904835
     locked: 0
@@ -66,7 +69,4 @@ TagManager:
     locked: 0
   - name: My Sprites
     uniqueID: 3961200907
-    locked: 0
-  - name: My Lighting
-    uniqueID: 2828629275
     locked: 0

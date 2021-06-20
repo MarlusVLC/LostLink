@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Audio
 {
+    
     [RequireComponent(typeof(AudioSource))]
     public class AudioLib : MonoBehaviour
     {
@@ -12,16 +13,28 @@ namespace Audio
         [SerializeField] private AudioClip capa_transicaoSFX;
         [SerializeField] private AudioClip jump;
 
-        [Header("Door sfx:")] [SerializeField] private AudioClip sliding_doorSFX;
+        [Header("Door sfx:")] 
+        [SerializeField] private AudioClip sliding_doorSFX;
 
-        [Header("Lights sfx:")] [SerializeField]
-        private AudioClip lightSFX;
-
-        [SerializeField] private AudioClip light_activateSFX;
-
+        [Header("Lights sfx:")]  
+        [SerializeField] private bool playBlueSound;
+        [SerializeField] private AudioClip BLUE_lightSFX;
+        [SerializeField] private AudioClip BLUE_light_activateSFX;
+        [SerializeField] private bool playRedSound;
+        [SerializeField] private AudioClip RED_lightSFX;
+        [SerializeField] private AudioClip RED_light_activateSFX;
+        
+        [Header("Teleport sfx: ")]
         [SerializeField] private AudioClip teleportSFX;
-
+        
+        [Header("Wind sfx: ")] 
+        [SerializeField] private AudioClip windSFX;
+        
+        [Header("Background: ")]
         [SerializeField] private AudioClip templeAmbient;
+        [SerializeField] private AudioClip natureAmbient;
+
+
         
         private AudioSource _audioSource;
 
@@ -55,9 +68,19 @@ namespace Audio
         // lights sfx
         public void LightSFX()
         {
-            if (_audioSource.clip != lightSFX)
-                _audioSource.clip = lightSFX;
-            _audioSource.Play(0);
+            if (playRedSound)
+            {
+                if (_audioSource.clip != RED_lightSFX)
+                    _audioSource.clip = RED_lightSFX;
+                _audioSource.Play(0);
+            }
+            if (playBlueSound)
+            {
+                if (_audioSource.clip != BLUE_lightSFX)
+                    _audioSource.clip = BLUE_lightSFX;
+                _audioSource.Play(0);
+            }
+
         }
 
         public IEnumerator StopLightSFX()
@@ -75,7 +98,16 @@ namespace Audio
 
         public void LightActivateSFX()
         {
-            _audioSource.PlayOneShot(light_activateSFX);
+            if (playRedSound)
+            {
+                _audioSource.PlayOneShot(RED_light_activateSFX);
+
+            }
+            if(playBlueSound)
+            {
+                _audioSource.PlayOneShot(BLUE_light_activateSFX);
+
+            }
         }
 
         public void TeleportSFX()
@@ -83,14 +115,23 @@ namespace Audio
             _audioSource.PlayOneShot(teleportSFX);
         }
 
-        // public void PlayTemple()
-        // {
-        //     if (_audioSource.clip != templeAmbient)
-        //     {
-        //         _audioSource.clip = templeAmbient;
-        //     }
-        //     _audioSource.pl
-        // }
+        public void WindSFX()
+        {
+            if (_audioSource.clip != windSFX)
+            {
+                _audioSource.clip = windSFX;
+            }
+            _audioSource.Play(0);
+        }
+
+        public void PlayTemple()
+        {
+            if (_audioSource.clip != templeAmbient)
+            {
+                _audioSource.clip = templeAmbient;
+            }
+            _audioSource.Play(0);
+        }
     }
 }
 

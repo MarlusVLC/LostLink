@@ -21,7 +21,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 524288
   useMask: 1
-  destroyOnExit: 0
+  destroyOnExit: 1
 --- !u!1001 &8331873728119817236
 PrefabInstance:
   m_ObjectHideFlags: 0
