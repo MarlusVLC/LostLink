@@ -8,5 +8,15 @@ namespace Aux_Classes
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("FINAL");
         }
+
+        public void ShowCredits()
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("FINAL CREDITOS");
+        }
+
+        public void StartAgain()
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("FINAL MENU");
+        }
     }
 }

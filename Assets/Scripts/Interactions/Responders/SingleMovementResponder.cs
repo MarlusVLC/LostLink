@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Responders
 {
@@ -13,6 +14,9 @@ namespace Responders
         [SerializeField] private float lerpTime;
         [SerializeField] private bool isLinear;
         [SerializeField] private bool playSound;
+        [Space(11)] 
+        [SerializeField] private bool FINAL_ASCENSION;
+        
 
 
         private Vector2 _initialPos;
@@ -26,6 +30,11 @@ namespace Responders
         
         public override void React(Vector2 messagePosition = new Vector2())
         {
+            if (FINAL_ASCENSION)
+            {
+                StartCoroutine(ExecuteFinalAscension());
+            }
+            
             if (!_isInterpolating)
             {
                 if (playSound) _audioLib.SlidingDoorOpeningSFX();
@@ -33,6 +42,28 @@ namespace Responders
                     ? InterpolatingMovement(_canReturn ? -moveGoal : moveGoal, lerpTime)
                     : InterpolatingMovement(_canReturn ? _initialPos : moveGoal, lerpTime));
             }
+        }
+
+
+        private IEnumerator ExecuteFinalAscension()
+        {
+            var players = GameObject.FindGameObjectsWithTag("Player");
+            print(players[0].name);
+            Array.ForEach(players, DisableMovement);
+            Aux_Classes.SceneManager sceneManager;
+            yield return new WaitForSeconds(10f);
+
+            if (TryGetComponent(out sceneManager))
+            {
+                print("players[0].name");
+
+                sceneManager.ShowCredits();
+            }
+        }
+        
+        private void DisableMovement(GameObject player)
+        {
+            player.GetComponent<MainMovement>().enabled = false;
         }
 
 

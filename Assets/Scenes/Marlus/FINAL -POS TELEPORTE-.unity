@@ -1503,6 +1503,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueOne
       objectReference: {fileID: 0}
+    - target: {fileID: 2807412068508289924, guid: be5d915f081ab0a488c08ea9794a7ca4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 2807412068508289925, guid: be5d915f081ab0a488c08ea9794a7ca4,
         type: 3}
       propertyPath: m_RootOrder
@@ -2541,6 +2546,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RedOne
+      objectReference: {fileID: 0}
+    - target: {fileID: 114415300062348412, guid: a6b47e85d2acc714bb14c13b887a13f8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6b47e85d2acc714bb14c13b887a13f8, type: 3}
@@ -4363,6 +4373,7 @@ MonoBehaviour:
   lerpTime: 1
   isLinear: 0
   playSound: 0
+  FINAL_ASCENSION: 0
 --- !u!4 &3128701249993996342
 Transform:
   m_ObjectHideFlags: 0

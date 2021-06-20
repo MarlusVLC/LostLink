@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Marlus/FINAL -POS TELEPORTE-.unity
     guid: a95b84bf51825ba4884c028f2ac3ae70
+  - enabled: 1
+    path: Assets/Scenes/Marlus/FINAL CREDITOS.unity
+    guid: bc35f5f0906ba984285e8f338d3a4f81
   m_configObjects: {}
