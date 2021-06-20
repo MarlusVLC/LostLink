@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Audio;
 using Aux_Classes;
 using UnityEngine;
 
@@ -14,13 +15,19 @@ namespace Interactions.Interactables
     
         private BoxCollider2D _presenceDetector;
         protected Animator _anim;
+        protected AudioLib _audioLib;
     
         [Space(11)]
         protected bool _canPress;
         protected int _keys;
         protected int _keySet;
-        
-    
+
+
+        private void Awake()
+        {
+            _audioLib = GetComponent<AudioLib>();
+        }
+
         void Start()
         {
             _canPress = false;
@@ -59,13 +66,18 @@ namespace Interactions.Interactables
                 if ((otherMask | enablerLayer) == enablerLayer)
                 {
                     _keys++;
+                    _audioLib.LightSFX();
                 }
             }
             
             else
             {
                 if (enablerPlayers.Contains(other.transform))
+                {
+                    _audioLib.LightSFX();
                     _keys++;
+
+                }
             }
             // print("Current quantity of keys: " + _keys);
 
@@ -95,6 +107,7 @@ namespace Interactions.Interactables
                 if ((otherMask | enablerLayer) == enablerLayer)
                 {
                     _keys--;
+                    StartCoroutine(_audioLib.StopLightSFX());
                 }
             }
 
@@ -103,6 +116,7 @@ namespace Interactions.Interactables
                 if (enablerPlayers.Contains(other.transform))
                 {
                     _keys--;
+                    StartCoroutine(_audioLib.StopLightSFX());
                 }
             }
         }

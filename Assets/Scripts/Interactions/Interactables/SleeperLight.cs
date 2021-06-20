@@ -21,6 +21,7 @@ namespace Interactions.Interactables
                 // _affectedAnim.SetTrigger("On");  //> Isso agora é responsabilidade do responder
                 Interact();
                 _isPlayingDefunctAnim = true;
+                _audioLib.LightActivateSFX();
                 _anim.SetTrigger("Defunct");
             }    
         }

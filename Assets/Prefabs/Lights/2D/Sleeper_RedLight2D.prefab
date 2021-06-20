@@ -21,6 +21,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 262144
   useMask: 1
+  destroyOnExit: 0
 --- !u!1001 &3228281952716720270
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28,6 +29,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2953956396775237294, guid: ca6f1d4d34bae674bbfd4baeecb8405f,
+        type: 3}
+      propertyPath: lightSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: d394fdfa5d490c140bfc7a06ec0fe0c2, type: 3}
+    - target: {fileID: 2953956396775237294, guid: ca6f1d4d34bae674bbfd4baeecb8405f,
+        type: 3}
+      propertyPath: light_activateSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: c7981fb7b22fbca479c5bfd40d91995a, type: 3}
     - target: {fileID: 3098601156601895534, guid: ca6f1d4d34bae674bbfd4baeecb8405f,
         type: 3}
       propertyPath: m_Controller
@@ -92,7 +103,7 @@ PrefabInstance:
     - target: {fileID: 7571064808511639989, guid: ca6f1d4d34bae674bbfd4baeecb8405f,
         type: 3}
       propertyPath: m_Name
-      value: 1_Sleeper_RedLight2D
+      value: Sleeper_RedLight2D
       objectReference: {fileID: 0}
     - target: {fileID: 7571064808511639991, guid: ca6f1d4d34bae674bbfd4baeecb8405f,
         type: 3}

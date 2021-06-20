@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6462742081879842742}
   m_Layer: 0
-  m_Name: Blue0_ChainRisingWall
+  m_Name: ChainRisingWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23,7 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6462742081879842743}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.1144648, y: 0.3778347, z: -51.91797}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -46,6 +46,8 @@ GameObject:
   - component: {fileID: 6462742082045784354}
   - component: {fileID: 6462742082045784380}
   - component: {fileID: 6462742082045784383}
+  - component: {fileID: 2082209981}
+  - component: {fileID: 2082209980}
   m_Layer: 0
   m_Name: ParedeMovel (1)
   m_TagString: Untagged
@@ -142,7 +144,7 @@ MonoBehaviour:
   - {x: -1.4999988, y: 1.7600001, z: 0}
   m_ShapePathHash: 1626377053
   m_Mesh: {fileID: 0}
-  m_InstanceId: 18390
+  m_InstanceId: -16926
 --- !u!61 &6462742082045784380
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -187,6 +189,120 @@ MonoBehaviour:
   ignoreY: 0
   lerpTime: 1.5
   isLinear: 0
+--- !u!82 &2082209981
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6462742082045784353}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &2082209980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6462742082045784353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75716ac7601e186458f1fc7ae700bf45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  capa_impacto_grande_finalSFX: {fileID: 0}
+  capa_transicaoSFX: {fileID: 0}
+  jump: {fileID: 0}
+  sliding_doorSFX: {fileID: 8300000, guid: 1aa34e4fd03a9d34f98f8aa0c34862b2, type: 3}
+  lightSFX: {fileID: 0}
+  light_activateSFX: {fileID: 0}
 --- !u!1 &6462742082253208297
 GameObject:
   m_ObjectHideFlags: 0

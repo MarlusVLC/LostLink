@@ -98,5 +98,15 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7973765661131392528, guid: 584c671b2e201874e9911bbf03072b98,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7973765661131392528, guid: 584c671b2e201874e9911bbf03072b98,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 584c671b2e201874e9911bbf03072b98, type: 3}

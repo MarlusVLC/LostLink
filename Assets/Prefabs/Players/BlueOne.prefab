@@ -18,9 +18,9 @@ GameObject:
   - component: {fileID: 2807412068508289922}
   - component: {fileID: 2807412068508289949}
   - component: {fileID: 334337853}
-  - component: {fileID: 334337851}
   - component: {fileID: 334337852}
   - component: {fileID: 334337862}
+  - component: {fileID: 7553463394289398290}
   m_Layer: 19
   m_Name: BlueOne
   m_TagString: Untagged
@@ -116,6 +116,7 @@ MonoBehaviour:
   horizontalMoveRate: 3
   jumpMoveRate: 40
   deathHeight: -20
+  DEFAULT_coyoteTime: 0
   DEFAULT_jumpBuffer: 0.2
   hDampingBasic: 0.56
   hDampingStop: 0.5
@@ -326,21 +327,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &334337851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2807412068508289924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86bfce93f0435ed46b09dfc53ef58d4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  capa_impacto_grande_final: {fileID: 8300000, guid: ea731f6212daace4a87fddbe20f71715,
-    type: 3}
-  capa_transicao: {fileID: 8300000, guid: e1a7ee6fc67f3374ba8d407d7deb4ce7, type: 3}
 --- !u!114 &334337852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,3 +382,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   godSpeed: 5
+--- !u!114 &7553463394289398290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2807412068508289924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75716ac7601e186458f1fc7ae700bf45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  capa_impacto_grande_finalSFX: {fileID: 0}
+  capa_transicaoSFX: {fileID: 0}
+  sliding_doorSFX: {fileID: 0}
+  lightSFX: {fileID: 0}
+  light_activateSFX: {fileID: 0}

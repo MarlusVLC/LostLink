@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
+using Audio;
 using UnityEngine;
 
 using Aux_Classes;
@@ -10,6 +11,7 @@ public class GameManager : MonoBehaviour
 {
 
     private Dictionary<GameObject, RespawnState> _respawnStates = new Dictionary<GameObject, RespawnState>();
+    private AudioLib _AudioLib;
 
 
 
@@ -31,6 +33,8 @@ public class GameManager : MonoBehaviour
         {
             INSTANCE = this;
         }
+        
+        
         
     }
     

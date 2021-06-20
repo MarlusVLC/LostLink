@@ -21,6 +21,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 524288
   useMask: 1
+  destroyOnExit: 0
 --- !u!1001 &8331873728119817236
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33,6 +34,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 22100000, guid: 8ba2052d4efa70840b4d5accfcd9d101,
         type: 2}
+    - target: {fileID: 287947683605892662, guid: 584c671b2e201874e9911bbf03072b98,
+        type: 3}
+      propertyPath: lightSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 240f261a68478a740bc9944f2acbb0ba, type: 3}
+    - target: {fileID: 287947683605892662, guid: 584c671b2e201874e9911bbf03072b98,
+        type: 3}
+      propertyPath: light_activateSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: a0d7397fa3f5eae40b161f16226c208a, type: 3}
     - target: {fileID: 4760764406556203312, guid: 584c671b2e201874e9911bbf03072b98,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -116,7 +127,7 @@ PrefabInstance:
     - target: {fileID: 4760764407061035309, guid: 584c671b2e201874e9911bbf03072b98,
         type: 3}
       propertyPath: m_Name
-      value: 2_Sleeper_BlueLight2D (1)
+      value: Sleeper_BlueLight2D
       objectReference: {fileID: 0}
     - target: {fileID: 4760764407061035311, guid: 584c671b2e201874e9911bbf03072b98,
         type: 3}

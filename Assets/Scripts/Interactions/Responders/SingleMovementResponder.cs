@@ -12,8 +12,8 @@ namespace Responders
         [SerializeField] private bool ignoreY;
         [SerializeField] private float lerpTime;
         [SerializeField] private bool isLinear;
+        [SerializeField] private bool playSound;
 
-        
 
         private Vector2 _initialPos;
         
@@ -28,6 +28,7 @@ namespace Responders
         {
             if (!_isInterpolating)
             {
+                if (playSound) _audioLib.SlidingDoorOpeningSFX();
                 StartCoroutine(useRelativeGoal
                     ? InterpolatingMovement(_canReturn ? -moveGoal : moveGoal, lerpTime)
                     : InterpolatingMovement(_canReturn ? _initialPos : moveGoal, lerpTime));

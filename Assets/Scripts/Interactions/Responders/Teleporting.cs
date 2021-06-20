@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Security.Cryptography;
+using Audio;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,12 +11,14 @@ namespace Responders
     {
         [SerializeField] private float waitingTime;
         [SerializeField] private GameObject[] players;
+        
 
         private Material _dissolvingMaterial;
-
+        private AudioLib _audioLib;
 
         public void Awake()
         {
+            _audioLib = GetComponent<AudioLib>();
             _dissolvingMaterial = players[0].GetComponent<SpriteRenderer>().sharedMaterial;
             if (_dissolvingMaterial.GetFloat("DissolveAmount") > 0.9f)
             {
@@ -33,6 +36,7 @@ namespace Responders
             Array.ForEach(players, DisableMovement);
             yield return new WaitForSeconds(time);
             StartCoroutine(InterpolateShader(_dissolvingMaterial, 0, 1, 4));
+            _audioLib.TeleportSFX();
             yield return new WaitForSeconds(4.1f);
             DestroyPlayers();
             SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex + 1)%SceneManager.sceneCountInBuildSettings);

@@ -2,33 +2,95 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
-public class AudioLib : MonoBehaviour
+namespace Audio
 {
-    [Space(10)][Header("Audio")]
-    [SerializeField] private AudioClip capa_impacto_grande_final;
-    [SerializeField] private AudioClip capa_transicao;
-    private AudioSource _audioSource;
-
-    public void Awake()
+    [RequireComponent(typeof(AudioSource))]
+    public class AudioLib : MonoBehaviour
     {
-        _audioSource = GetComponent<AudioSource>();
-    }
+        [Header("Character movement sfx:")] [Space(10)] [Header("Audio")] 
+        [SerializeField] private AudioClip capa_impacto_grande_finalSFX;
+        [SerializeField] private AudioClip capa_transicaoSFX;
+        [SerializeField] private AudioClip jump;
 
-    public void RunSFX()
-    {
-        _audioSource.PlayOneShot(Random.Range(0.0f, 1.0f) < 0.5 ? capa_impacto_grande_final : capa_transicao);
-    } 
-    
-    public IEnumerator StopLightSFX(){
-        if (_audioSource.isPlaying)
-            yield return null;
-        yield return new WaitWhile(isPlaying);
-        _audioSource.Stop();
-    }
+        [Header("Door sfx:")] [SerializeField] private AudioClip sliding_doorSFX;
 
-    private bool isPlaying()
-    {
-        return _audioSource.volume > 0f;
+        [Header("Lights sfx:")] [SerializeField]
+        private AudioClip lightSFX;
+
+        [SerializeField] private AudioClip light_activateSFX;
+
+        [SerializeField] private AudioClip teleportSFX;
+
+        [SerializeField] private AudioClip templeAmbient;
+        
+        private AudioSource _audioSource;
+
+        public void Awake()
+        {
+            _audioSource = GetComponent<AudioSource>();
+        }
+
+        #region PLAYERS
+        
+        // character movement sfx
+        public void RunSFX()
+        {
+            _audioSource.PlayOneShot(Random.Range(0.0f, 1.0f) < 0.5 ? capa_impacto_grande_finalSFX : capa_transicaoSFX);
+        }
+
+        public void JumpSFX()
+        {
+            _audioSource.PlayOneShot(jump);
+        }
+        
+        #endregion
+
+
+        // sliding door sfx
+        public void SlidingDoorOpeningSFX()
+        {
+            _audioSource.PlayOneShot(sliding_doorSFX);
+        }
+
+        // lights sfx
+        public void LightSFX()
+        {
+            if (_audioSource.clip != lightSFX)
+                _audioSource.clip = lightSFX;
+            _audioSource.Play(0);
+        }
+
+        public IEnumerator StopLightSFX()
+        {
+            if (_audioSource.isPlaying)
+                yield return null;
+            yield return new WaitWhile(isPlaying);
+            _audioSource.Stop();
+        }
+
+        private bool isPlaying()
+        {
+            return _audioSource.volume > 0f;
+        }
+
+        public void LightActivateSFX()
+        {
+            _audioSource.PlayOneShot(light_activateSFX);
+        }
+
+        public void TeleportSFX()
+        {
+            _audioSource.PlayOneShot(teleportSFX);
+        }
+
+        // public void PlayTemple()
+        // {
+        //     if (_audioSource.clip != templeAmbient)
+        //     {
+        //         _audioSource.clip = templeAmbient;
+        //     }
+        //     _audioSource.pl
+        // }
     }
 }
+
