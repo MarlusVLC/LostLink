@@ -32,7 +32,7 @@ namespace Responders
         private bool _isMoving;
         
 
-        private void Awake()
+        public void Awake()
         {
             _checkingBox = GetComponent<PositionCheckingBox>();
         }
