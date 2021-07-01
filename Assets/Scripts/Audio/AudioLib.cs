@@ -29,6 +29,10 @@ namespace Audio
         
         [Header("Wind sfx: ")] 
         [SerializeField] private AudioClip windSFX;
+
+        [Header("Start Menu: ")]
+        [SerializeField] private AudioClip startButtonSFX;
+        [SerializeField] private AudioClip creditsButtonSFX;
         
         [Header("Background: ")]
         [SerializeField] private AudioClip templeAmbient;
@@ -108,6 +112,16 @@ namespace Audio
                 _audioSource.PlayOneShot(BLUE_light_activateSFX);
 
             }
+        }
+
+        public void StartButtonSFX()
+        {
+            _audioSource.PlayOneShot(startButtonSFX);
+        }
+        
+        public void CreditsButtonSFX()
+        {
+            _audioSource.PlayOneShot(creditsButtonSFX);
         }
 
         public void TeleportSFX()
