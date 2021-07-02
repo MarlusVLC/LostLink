@@ -9,8 +9,9 @@ namespace Interactions.Interactables
         [SerializeField] private float _answerTimer;
         [SerializeField] private float _currTime;
 
-        void Awake()
+        protected override void  Awake()
         {
+            base.Awake();
             _currTime = 0f;
         }
         
@@ -22,12 +23,13 @@ namespace Interactions.Interactables
             {
                 if (_currTime > 0)
                 {
-                    Interact();
+                    // Interact();
                     _anim.SetTrigger("Defunct");
                     otherLight.Cease();
                     return;
                 }
                 _anim.SetTrigger("Interact");
+                _audioLib.LightActivateSFX();
                 StartCoroutine(otherLight.StartTimer());
             }    
         }

@@ -23,7 +23,7 @@ namespace Interactions.Interactables
         protected int _keySet;
 
 
-        private void Awake()
+        protected virtual void Awake()
         {
             _audioLib = GetComponent<AudioLib>();
         }
